@@ -18,13 +18,26 @@
 		"sourceMap": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true,
 		"baseUrl": ".",
 		"allowJs": true,
 		"checkJs": true,
 		"paths": {
 			"$lib/*": ["src/lib/*"]
-		}
+		},
+
+		/* type-checking */
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+
+		/* clean-code */
+		"forceConsistentCasingInFileNames": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true
 	},
-	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
+	"exclude": ["node_modules/", ".svelte-kit/", "svelte.config.js"],
+	"include": ["**/*.d.ts", "**/*.js", "**/*.ts", "**/*.svelte"]
 }

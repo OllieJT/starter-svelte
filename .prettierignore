@@ -1,3 +1,14 @@
-.svelte/**
+# Pipeline
+.svelte-kit/**
+static/**
 build/**
 node_modules/**
+.cache/**
+
+# Libraries
+.next/
+.vercel/
+
+# Files
+package.json
+package-lock.json
