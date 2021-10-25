@@ -1,45 +1,17 @@
 <script lang="ts">
-	import Header from '$lib/Header/index.svelte';
-	import '../app.css';
+	import "@fontsource/inter/300.css";
+	import "@fontsource/inter/600.css";
+	import "@fontsource/inter/800.css";
 </script>
 
-<Header />
+<style lang="scss" global>
+	@import "../app.scss";
+</style>
 
-<main>
-	<slot />
-</main>
+<nav>Nav here</nav>
+
+<slot />
 
 <footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+	<p>Some footer content here</p>
 </footer>
-
-<style>
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	}
-</style>

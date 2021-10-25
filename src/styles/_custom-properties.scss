@@ -1,0 +1,31 @@
+@use "./tokens" as *;
+
+:root {
+	@each $label, $value in $font-family {
+		--font-family-#{$label}: #{$value};
+	}
+	@each $label, $value in $font-size {
+		--font-size-#{$label}: #{$value};
+	}
+	@each $label, $value in $font-weight {
+		--font-weight-#{$label}: #{$value};
+	}
+	@each $label, $value in $line-height {
+		--line-height-#{$label}: #{$value};
+	}
+
+	// Sizes
+	@each $label, $value in $space {
+		--space-#{$label}: #{$value};
+	}
+	@each $label, $value in $radius {
+		--radius-#{$label}: #{$value};
+	}
+
+	// Colors
+	@each $mode, $label in $themes {
+		@each $label, $value in $label {
+			--clr-#{$mode}-#{$label}: #{$value};
+		}
+	}
+}
