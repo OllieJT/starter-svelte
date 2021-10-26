@@ -1,5 +1,9 @@
 <style lang="scss">
 	div {
+		--content-width: 800px;
+		--content-overflow: calc(var(--space-large) * 2);
+		--content-width-alt: calc(var(--content-width) + var(--content-overflow));
+
 		:global(h1),
 		:global(h2),
 		:global(h3),
@@ -7,7 +11,6 @@
 		:global(h5),
 		:global(h6),
 		:global(p),
-		:global(blockquote),
 		:global(ul),
 		:global(ol),
 		:global(dl),
@@ -16,7 +19,14 @@
 		:global(figcaption),
 		:global(details),
 		:global(hr) {
-			max-width: 800px;
+			max-width: var(--content-width);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		:global(blockquote),
+		:global(figure) {
+			max-width: var(--content-width-alt);
 			margin-left: auto;
 			margin-right: auto;
 		}

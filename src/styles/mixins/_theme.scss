@@ -1,19 +1,17 @@
+@use "../tokens" as *;
+
 @mixin DarkMode {
 	color-scheme: dark;
 
 	--fg: var(--clr-dark-fg);
 	--fg-alt: var(--clr-dark-fg-alt);
 	--fg-detail: var(--clr-dark-fg-detail);
+	--fg-brand: var(--clr-dark-fg-brand);
 
 	--bg: var(--clr-dark-bg);
 	--bg-alt: var(--clr-dark-bg-alt);
 	--bg-detail: var(--clr-dark-bg-detail);
-
-	--bg-primary: var(--clr-darkmode-pink-100);
-	--bg-accent: var(--clr-darkmode-mint-200);
-
-	--fg-primary: var(--clr-darkmode-pink-300);
-	--fg-accent: var(--clr-darkmode-mint-400);
+	--bg-brand: var(--clr-dark-bg-brand);
 }
 
 @mixin LightMode {
@@ -22,14 +20,10 @@
 	--fg: var(--clr-light-fg);
 	--fg-alt: var(--clr-light-fg-alt);
 	--fg-detail: var(--clr-light-fg-detail);
+	--fg-brand: var(--clr-light-fg-brand);
 
 	--bg: var(--clr-light-bg);
 	--bg-alt: var(--clr-light-bg-alt);
 	--bg-detail: var(--clr-light-bg-detail);
-
-	--bg-primary: var(--clr-lightmode-pink-100);
-	--bg-accent: var(--clr-lightmode-mint-200);
-
-	--fg-primary: var(--clr-lightmode-pink-300);
-	--fg-accent: var(--clr-lightmode-mint-400);
+	--bg-brand: var(--clr-light-bg-brand);
 }

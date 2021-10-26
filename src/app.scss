@@ -29,9 +29,11 @@ body {
 }
 
 a {
-	color: var(--fg-primary);
+	color: var(--fg-brand);
+	text-decoration: none;
 	&:hover {
-		color: var(--fg-accent);
+		color: var(--bg-brand);
+		text-decoration: underline;
 	}
 }
 
@@ -53,6 +55,7 @@ h5 {
 h6 {
 	@include H6();
 }
-p {
+p,
+blockquote {
 	@include Content();
 }
