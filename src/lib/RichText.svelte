@@ -1,8 +1,18 @@
+<script lang="ts">
+	export let constrain: boolean = false;
+</script>
+
 <style lang="scss">
 	div {
 		--content-width: 800px;
 		--content-overflow: calc(var(--space-large) * 2);
 		--content-width-alt: calc(var(--content-width) + var(--content-overflow));
+
+		&.constrain {
+			max-width: var(--content-width-alt);
+			margin-left: auto;
+			margin-right: auto;
+		}
 
 		:global(h1),
 		:global(h2),
@@ -29,6 +39,8 @@
 			max-width: var(--content-width-alt);
 			margin-left: auto;
 			margin-right: auto;
+			margin-top: var(--space-large);
+			margin-bottom: var(--space-large);
 		}
 
 		:global(h1),
@@ -49,12 +61,23 @@
 			margin-bottom: 1em;
 		}
 
-		:global(blockquote),
 		:global(ul),
 		:global(ol),
 		:global(dl) {
 			margin-top: var(--space-large);
 			margin-bottom: var(--space-large);
+			:global(ul),
+			:global(ol),
+			:global(dl) {
+				margin-top: var(--space-tiny);
+				margin-bottom: var(--space-small);
+			}
+			:global(li),
+			:global(dd),
+			:global(dt) {
+				margin-top: var(--space-small);
+				margin-bottom: var(--space-small);
+			}
 		}
 
 		:global(hr) {
@@ -66,6 +89,6 @@
 	}
 </style>
 
-<div>
+<div class:constrain>
 	<slot />
 </div>

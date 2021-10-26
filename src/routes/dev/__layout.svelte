@@ -8,6 +8,6 @@
 	}
 </style>
 
-<RichText>
+<RichText constrain>
 	<slot />
 </RichText>

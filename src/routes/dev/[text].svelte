@@ -175,17 +175,16 @@
 		be preserved use the <code>pre</code> tag
 	</p>
 	<pre>
-					let school = 'UCSD';
+		let school = 'UCSD';
 
-					/**
-					 * helloJSWorld - the prototypical example complete with opinoniated mistakes!
-					 */
-					function helloJSWorld()
+		// helloJSWorld - the prototypical example complete with opinoniated mistakes!
 
-					/* helloJSWorld */
+		function helloJSWorld()
 
-					helloJSWorld();
-				</pre>
+		// helloJSWorld
+
+		helloJSWorld();
+	</pre>
 
 	<p>A figure is a semantic way to insert something like a chart or picture.</p>
 	<figure>
