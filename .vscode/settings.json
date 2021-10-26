@@ -1,0 +1,21 @@
+{
+	"files.exclude": {
+		"**/*-lock.json": true,
+		"**/*.map": true,
+		"**/.cache": true,
+		"**/.DS_Store": true,
+		"**/.gitattributes": true,
+		"**/*.Identifier": true,
+		"**/node_modules": true,
+		"**/.svelte-kit": true
+	},
+	"files.associations": {
+		"**/*.env*": "dotenv",
+		"**/*.svx": "mdx"
+		//"*.css": "postcss"
+	},
+	"files.watcherExclude": {
+		"**/node_modules": true,
+		"**/.svelte-kit": true
+	}
+}
