@@ -1,0 +1,137 @@
+@use "./exports" as *;
+@import "./normalize";
+@import "./custom-properties";
+
+[data-theme="light"] {
+	@include LightMode;
+	[data-theme="invert"] {
+		@include DarkMode;
+	}
+}
+[data-theme="dark"] {
+	@include DarkMode;
+	[data-theme="invert"] {
+		@include LightMode;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+	font-family: $font-family-sans;
+	font-feature-settings:
+	// https://rsms.me/inter/lab/?feat-cpsp=1&feat-frac=1&feat-ss01=1&feat-tnum=1&feat-zero=1&size=35
+	// Contextual Alternates
+		"calt" 1,
+		// Unknown
+		"ccmp" 1,
+		// Kerning
+		"kern" 1,
+		// Case Alternatives
+		"case" 0,
+		// Capital Spacing
+		"cpsp" 1,
+		// Discretionary Ligatures
+		"dlig" 0,
+		// Auto Fractions
+		"frac" 1,
+		// Denominatiors
+		"dnom" 0,
+		// Numerators
+		"numr" 0,
+		// Stylistic Alternates
+		"salt" 0,
+		//"subs" 0, // Subscript
+		//"sups" 0, // Superscript
+		// Tabular Numbers
+		"tnum" 1,
+		// Slashed Zero
+		"zero" 1,
+		// Open Digits
+		"ss01" 1,
+		// Disambiguation
+		"ss02" 0,
+		// Curved r
+		"ss03" 0,
+		// Disambiguation w/o zero
+		"ss04" 0,
+		//Alternate 1
+		"cv01" 0,
+		// Open 4
+		"cv02" 0,
+		// Open 6
+		"cv03" 0,
+		// Open 9
+		"cv04" 0,
+		// Lowercase L with tail
+		"cv05" 0,
+		// Curved lowercase r
+		"cv06" 0,
+		// Germn double s
+		"cv07" 0,
+		// Uppercase i with serif
+		"cv08" 1,
+		// Flat top 3
+		"cv09" 0,
+		// Capital Gwith spur
+		"cv10" 0,
+		// Single story a
+		"cv11" 0;
+}
+
+body {
+	@include MediumContent();
+	line-height: 1em;
+
+	background-color: $bg;
+	color: $fg;
+}
+
+a {
+	--link-text-color: $fg-brand;
+	--link-text-decoration: none;
+
+	color: var(--link-text-color);
+	text-decoration: var(--link-text-decoration);
+
+	&:hover {
+		--link-text-color: $fg-accent;
+		--link-text-decoration: underline;
+	}
+}
+
+h1 {
+	@include HeroTitle();
+}
+h2 {
+	@include LargeTitle();
+}
+h3 {
+	@include HeroContent();
+}
+h4 {
+	@include LargeContent();
+}
+h5 {
+	@include MediumTitle();
+}
+h6 {
+	@include SmallTitle();
+}
+p,
+blockquote {
+	@include MediumContent();
+}
+
+pre,
+code,
+kbd {
+	font-family: $font-family-mono;
+}

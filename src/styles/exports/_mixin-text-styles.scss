@@ -1,0 +1,84 @@
+@use "./_variables.scss" as *;
+
+@mixin BlockText() {
+	margin-block-start: 0em;
+	margin-block-end: 0em;
+}
+
+@mixin FontWeightBold() {
+	font-weight: $font-weight-bold;
+}
+@mixin FontWeightMedium() {
+	font-weight: $font-weight-semibold;
+}
+@mixin FontWeightRegular() {
+	font-weight: $font-weight-regular;
+}
+
+@mixin HeroTitle {
+	@include BlockText();
+	@include FontWeightBold();
+	font-size: $font-size-hero-title;
+	line-height: $line-height-medium;
+	letter-spacing: -0.02em;
+}
+@mixin HeroContent {
+	@include BlockText();
+	@include FontWeightRegular();
+	font-size: $font-size-hero-content;
+	line-height: $line-height-medium;
+	letter-spacing: 0em;
+}
+
+@mixin LargeTitle {
+	@include BlockText();
+	@include FontWeightBold();
+	font-size: $font-size-large-title;
+	line-height: $line-height-medium;
+	letter-spacing: -0.01em;
+}
+@mixin LargeContent {
+	@include BlockText();
+	@include FontWeightRegular();
+	font-size: $font-size-large-content;
+	line-height: $line-height-medium;
+	letter-spacing: 0em;
+}
+
+@mixin MediumTitle {
+	@include BlockText();
+	@include FontWeightMedium();
+	font-size: $font-size-medium-title;
+	line-height: $line-height-medium;
+	letter-spacing: -0.01em;
+}
+@mixin MediumContent {
+	@include BlockText();
+	@include FontWeightRegular();
+	font-size: $font-size-medium-content;
+	line-height: $line-height-medium;
+	letter-spacing: 0em;
+}
+
+@mixin SmallTitle {
+	@include BlockText();
+	@include FontWeightMedium();
+	font-size: $font-size-small-title;
+	line-height: $line-height-medium;
+	letter-spacing: -0.01em;
+}
+@mixin SmallContent {
+	@include BlockText();
+	@include FontWeightRegular();
+	font-size: $font-size-small-content;
+	line-height: $line-height-medium;
+	letter-spacing: -0.01em;
+}
+
+@mixin Label {
+	@include BlockText();
+	@include FontWeightBold();
+	font-size: $font-size-label;
+	line-height: $line-height-medium;
+	letter-spacing: -0.1em;
+}

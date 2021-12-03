@@ -9,7 +9,9 @@
 		"mikestead.dotenv",
 
 		"ardenivanov.svelte-intellisense",
-		"svelte.svelte-vscode"
+		"svelte.svelte-vscode",
+
+		"paradigm-sy.vscode-css-variables-autocomplete"
 
 		//"sanity-io.vscode-sanity"
 	]

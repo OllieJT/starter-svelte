@@ -1,12 +1,16 @@
 @use "./tokens" as *;
+@use "./exports" as util;
 
 :root {
 	@each $label, $value in $font-family {
 		--font-family-#{$label}: #{$value};
 	}
-	@each $label, $value in $font-size {
-		--font-size-#{$label}: #{$value};
+	@each $type, $size in $font-size {
+		@each $size, $value in $size {
+			--font-size-#{$size}-#{$type}: #{$value};
+		}
 	}
+
 	@each $label, $value in $font-weight {
 		--font-weight-#{$label}: #{$value};
 	}
@@ -28,4 +32,6 @@
 			--clr-#{$mode}-#{$label}: #{$value};
 		}
 	}
+
+	@include util.DarkMode;
 }

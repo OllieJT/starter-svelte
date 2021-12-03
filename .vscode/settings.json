@@ -17,5 +17,8 @@
 	"files.watcherExclude": {
 		"**/node_modules": true,
 		"**/.svelte-kit": true
-	}
+	},
+	"cSpell.words": ["semibold"],
+	"cssVarriablesAutocomplete.files": ["**/**/variables.css"],
+	"cssVarriablesAutocomplete.languageModes": ["scss"]
 }

@@ -5,7 +5,7 @@
 </script>
 
 <style lang="scss" global>
-	@import "../app.scss";
+	@import "../styles/index.scss";
 </style>
 
 <nav>Nav here</nav>
