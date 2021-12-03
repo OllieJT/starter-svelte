@@ -87,7 +87,7 @@ const pasteCssCustomProperties = `
 `;
 
 function saveToFile(input = "") {
-	const pathToFile = path.resolve("./src/styles/exports/_variables.scss");
+	const pathToFile = path.resolve("./src/styles/variables.scss");
 	const updateNote = `// Last Updated: ${new Date().toUTCString()}`;
 	const data = updateNote + input;
 

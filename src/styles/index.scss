@@ -25,7 +25,7 @@ html {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
 	font-size: 62.5%;
-	font-family: $font-family-sans;
+	font-family: var(--font-family-sans);
 	font-feature-settings:
 	// https://rsms.me/inter/lab/?feat-cpsp=1&feat-frac=1&feat-ss01=1&feat-tnum=1&feat-zero=1&size=35
 	// Contextual Alternates
@@ -90,19 +90,19 @@ body {
 	@include MediumContent();
 	line-height: 1em;
 
-	background-color: $bg;
-	color: $fg;
+	background-color: var(--bg);
+	color: var(--fg);
 }
 
 a {
-	--link-text-color: $fg-brand;
+	--link-text-color: var(--fg-brand);
 	--link-text-decoration: none;
 
 	color: var(--link-text-color);
 	text-decoration: var(--link-text-decoration);
 
 	&:hover {
-		--link-text-color: $fg-accent;
+		--link-text-color: var(--fg-accent);
 		--link-text-decoration: underline;
 	}
 }
@@ -133,5 +133,5 @@ blockquote {
 pre,
 code,
 kbd {
-	font-family: $font-family-mono;
+	font-family: var(--font-family-mono);
 }
