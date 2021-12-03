@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-	import SvelteSeo from "svelte-seo/types/SvelteSeo";
+	import SvelteSeo from "svelte-seo";
 </script>
 
 <SvelteSeo title="Homepage" />
