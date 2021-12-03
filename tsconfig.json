@@ -21,9 +21,6 @@
 		"baseUrl": ".",
 		"allowJs": true,
 		"checkJs": true,
-		"paths": {
-			"$lib/*": ["src/lib/*"]
-		},
 
 		/* type-checking */
 		"strictNullChecks": true,
@@ -36,7 +33,12 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true
+		"noFallthroughCasesInSwitch": true,
+
+		"paths": {
+			"$components/*": ["src/lib/components/*"],
+			"$util/*": ["src/lib/util/*"],
+		}
 	},
 	"exclude": ["node_modules/", ".svelte-kit/", "svelte.config.js"],
 	"include": ["**/*.d.ts", "**/*.js", "**/*.ts", "**/*.svelte"]

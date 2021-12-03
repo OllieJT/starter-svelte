@@ -1,5 +1,5 @@
 <script lang="ts">
-	import RichText from "$lib/RichText.svelte";
+	import RichText from "$components/RichText.svelte";
 </script>
 
 <style lang="scss" global>
