@@ -5,8 +5,8 @@
 	"license": "NONE",
 	"author": {
 		"name": "Ollie Taylor <OllieJT>",
-		"email": "hey@olliejt.com",
-		"url": "https://olliejt.com/"
+		"email": "ollie@inqling.studio",
+		"url": "https://inqling.studio/"
 	},
 	"scripts": {
 		"dev": "svelte-kit dev",
@@ -20,21 +20,22 @@
 		"format-custom-properties": "node handle-custom-properties.js"
 	},
 	"devDependencies": {
+		"@fortawesome/fontawesome-common-types": "^0.2.36",
 		"@sveltejs/kit": "next",
-		"@types/cookie": "^0.4.0",
+		"@types/cookie": "^0.4.1",
 		"date-fns": "^2.27.0",
-		"prettier": "~2.4.1",
-		"prettier-plugin-svelte": "^2.4.0",
-		"sass": "^1.43.3",
+		"prettier": "~2.5.1",
+		"prettier-plugin-svelte": "^2.5.0",
+		"sass": "^1.44.0",
 		"schema-dts": "^1.0.0",
-		"svelte": "^3.42.6",
-		"svelte-check": "^2.2.6",
-		"svelte-preprocess": "^4.9.4",
+		"svelte": "^3.44.2",
+		"svelte-check": "^2.2.10",
+		"svelte-preprocess": "^4.9.8",
 		"svelte-seo": "^1.3.1",
 		"tslib": "^2.3.1",
-		"typescript": "^4.4.3"
+		"typescript": "^4.5.2"
 	},
 	"dependencies": {
-		"@fontsource/inter": "^4.5.0"
+		"@fontsource/inter": "^4.5.1"
 	}
 }

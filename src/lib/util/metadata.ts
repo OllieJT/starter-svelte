@@ -1,4 +1,4 @@
-import type { Organization } from "schema-dts";
+//import type { Organization } from "schema-dts";
 
 const token = {
 	color: "#FF00FF",
@@ -12,24 +12,7 @@ const token = {
 	twitter_id: "todo",
 };
 
-const jsonldOrganization: Organization = {
-	//"@context": "https://schema.org",
-
-	"@type": "Organization",
-	name: token.site_name,
-	url: token.site_url,
-	logo: token.site_logo,
-
-	sameAs: [
-		"https://www.linkedin.com/company/<TODO>",
-		"https://dribbble.com/<TODO>",
-		"https://twitter.com/<TODO>",
-	],
-};
-
 export const metadata = {
 	token,
-	jsonld: {
-		organization: JSON.stringify(jsonldOrganization),
-	},
+	jsonld: {},
 };

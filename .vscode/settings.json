@@ -18,7 +18,7 @@
 		"**/node_modules": true,
 		"**/.svelte-kit": true
 	},
-	"cSpell.words": ["semibold"],
+	"cSpell.words": ["fortawesome", "semibold"],
 	"cssVarriablesAutocomplete.files": ["**/**/variables.css"],
 	"cssVarriablesAutocomplete.languageModes": ["scss"]
 }
