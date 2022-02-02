@@ -3,7 +3,6 @@
 	// for the documentation about the extensions.json format
 	"recommendations": [
 		"esbenp.prettier-vscode",
-		"coenraads.bracket-pair-colorizer-2",
 		"aaron-bond.better-comments",
 		"gruntfuggly.todo-tree",
 		"mikestead.dotenv",
