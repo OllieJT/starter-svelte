@@ -36,8 +36,10 @@
 		"noFallthroughCasesInSwitch": true,
 
 		"paths": {
+			"$api/*": ["src/lib/api/*"],
 			"$components/*": ["src/lib/components/*"],
-			"$util/*": ["src/lib/util/*"],
+			"$db/*": ["src/lib/db/*"],
+			"$util/*": ["src/lib/util/*"]
 		}
 	},
 	"exclude": ["node_modules/", ".svelte-kit/", "svelte.config.js"],

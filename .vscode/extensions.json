@@ -10,8 +10,10 @@
 		"ardenivanov.svelte-intellisense",
 		"svelte.svelte-vscode",
 
-		"paradigm-sy.vscode-css-variables-autocomplete"
+		"paradigm-sy.vscode-css-variables-autocomplete",
 
+		"csstools.postcss",
+		"bradlc.vscode-tailwindcss"
 		//"sanity-io.vscode-sanity"
 	]
 }

@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full overflow-hidden">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<meta property="og:locale" content="en_GB" />
-		<meta name="og:site_name" content="~TODO~" />
+		<meta name="robots" content="index,follow" />
+		<meta name="googlebot" content="index,follow" />
 
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="manifest" href="/manifest.json" />
-		<meta name="theme-color" content="#FF00FF" />
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@TODO" />
+		<meta name="twitter:creator" content="@TODO" />
+		<meta name="twitter:site:id" content="TODO" />
+
+		<!-- OpenGraph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="TODO" />
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:site_name" content="TODO" />
+
+		<!-- Apple -->
+		<meta name="apple-mobile-web-app-title" content="TODO" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+
+		<!-- Microsoft -->
+		<meta name="msapplication-config" content="/browserconfig.xml" />
+		<meta name="msapplication-TileColor" content="#TODO" />
+
+		<!-- Universal -->
+		<meta name="theme-color" content="#TODO" />
+		<meta name="color-scheme" content="dark light" />
+		<link href="/manifest.json" rel="manifest" />
+		<link rel="bookmark" title="TODO" />
 
 		<script type="application/ld+json">
 			{
@@ -27,13 +50,16 @@
 			}
 		</script>
 
-		<script defer src="@fortawesome/fontawesome-free/js/brands.js"></script>
-		<script defer src="@fortawesome/fontawesome-free/js/solid.js"></script>
-		<script defer src="@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+		<!-- Icons -->
+		<link rel="icon" href="/img/icon/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/img/icon/favicon.svg" />
 
 		%svelte.head%
 	</head>
-	<body>
+	<body
+		class="h-full overflow-auto scroll-smooth bg-white text-zinc-600 selection:bg-yellow-300 selection:text-black dark:bg-zinc-900 dark:text-zinc-400"
+	>
+		<span id="top"></span>
 		<div id="svelte">%svelte.body%</div>
 	</body>
 </html>
