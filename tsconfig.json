@@ -27,6 +27,7 @@
 		"strictFunctionTypes": true,
 		"noImplicitAny": true,
 		"noImplicitThis": true,
+		"noEmit": true,
 
 		/* clean-code */
 		"forceConsistentCasingInFileNames": true,
