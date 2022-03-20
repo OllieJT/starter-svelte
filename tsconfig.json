@@ -25,5 +25,5 @@
 		}
 	},
 	"exclude": ["node_modules/", ".svelte-kit/", "svelte.config.js"],
-	"include": ["**/*.d.ts", "**/*.js", "**/*.ts", "**/*.svelte"]
+	"include": ["**/*.d.ts", "**/*.js", "**/*.ts", "**/*.svelte", "prettier.cjs"]
 }

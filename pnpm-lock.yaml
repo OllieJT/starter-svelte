@@ -20,7 +20,6 @@ specifiers:
   postcss: ^8.4.12
   postcss-import: ^14.0.2
   prettier: ~2.6.0
-  prettier-plugin-svelte: ^2.6.0
   prettier-plugin-tailwindcss: ^0.1.8
   schema-dts: ^1.1.0
   svelte: ^3.46.4
@@ -53,7 +52,6 @@ devDependencies:
   postcss: 8.4.12
   postcss-import: 14.0.2_postcss@8.4.12
   prettier: 2.6.0
-  prettier-plugin-svelte: 2.6.0_prettier@2.6.0+svelte@3.46.4
   prettier-plugin-tailwindcss: 0.1.8_prettier@2.6.0
   schema-dts: 1.1.0_typescript@4.6.2
   svelte: 3.46.4
@@ -1625,16 +1623,6 @@ packages:
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
-    dev: true
-
-  /prettier-plugin-svelte/2.6.0_prettier@2.6.0+svelte@3.46.4:
-    resolution: {integrity: sha512-NPSRf6Y5rufRlBleok/pqg4+1FyGsL0zYhkYP6hnueeL1J/uCm3OfOZPsLX4zqD9VAdcXfyEL2PYqGv8ZoOSfA==}
-    peerDependencies:
-      prettier: ^1.16.4 || ^2.0.0
-      svelte: ^3.2.0
-    dependencies:
-      prettier: 2.6.0
-      svelte: 3.46.4
     dev: true
 
   /prettier-plugin-tailwindcss/0.1.8_prettier@2.6.0:
