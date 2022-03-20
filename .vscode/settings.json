@@ -19,7 +19,6 @@
 		"**/.svelte-kit": true
 	},
 	"cSpell.words": [
-		"fortawesome", "semibold",
 		"Dribbble",
 		"fortawesome",
 		"frontmatter",
@@ -28,6 +27,7 @@
 		"portabletext",
 		"remixicon",
 		"semibold",
-		"tailwindcss"
+		"tailwindcss",
+		"urql"
 	]
 }

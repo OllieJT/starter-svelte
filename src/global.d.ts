@@ -11,15 +11,12 @@
 
 */
 
-interface ImportMetaEnv {}
+interface ImportMetaEnv {
+	readonly VITE_GRAPHQL_ENDPOINT: string;
+}
 
-declare global {
-	namespace NodeJS {
-		interface ProcessEnv {
-			NODE_ENV: "development" | "production";
-			NEXT_PUBLIC_URL: string;
-		}
-	}
+interface ImportMeta {
+	readonly env: ImportMetaEnv;
 }
 
 declare namespace App {
