@@ -1,5 +1,6 @@
 import preprocess from "svelte-preprocess";
 import adapter from "@sveltejs/adapter-auto";
+import graphql from "@rollup/plugin-graphql";
 import path from "path";
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -24,6 +25,7 @@ const config = {
 			optimizeDeps: {
 				exclude: ["@urql/svelte"],
 			},
+			plugins: [graphql()],
 		},
 	},
 };

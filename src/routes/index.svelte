@@ -9,17 +9,15 @@
 
 		if (data.error) {
 			console.log({
-					name:data.error.name,
-					message:data.error.message,
-					stack:data.error.stack,
-					networkError:data.error.networkError,
-					graphQLErrors:data.error.graphQLErrors
-				})
+				name: data.error.name,
+				message: data.error.message,
+				stack: data.error.stack,
+				networkError: data.error.networkError,
+				graphQLErrors: data.error.graphQLErrors,
+			});
 			return {
 				status: 400,
-				error: data.error.networkError
-
-
+				error: data.error.networkError,
 			};
 		}
 
@@ -38,8 +36,6 @@
 	export let demoData: any;
 </script>
 
-
-
 <SvelteSeo title="Homepage" />
 
 <Wrapper constrain gutter>
@@ -50,14 +46,14 @@
 
 		<ul>
 			{#each demoData.countries as country}
-			<li>
-				<a href="/country/{country.code}">{country.name}</a>
-			</li>
+				<li>
+					<a href="/country/{country.code}">{country.name}</a>
+				</li>
 			{/each}
 		</ul>
 	</Prose>
 </Wrapper>
 
 <pre>
-	{JSON.stringify(demoData,null,2)}
+	{JSON.stringify(demoData, null, 2)}
 </pre>
