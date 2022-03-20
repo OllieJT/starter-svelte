@@ -6,7 +6,7 @@ specifiers:
   '@inqling/svelte-icons': ^0.2.2
   '@sveltejs/adapter-auto': next
   '@sveltejs/kit': next
-  '@tailwindcss/forms': ^0.4.0
+  '@tailwindcss/forms': ^0.5.0
   '@tailwindcss/typography': ^0.5.2
   '@typescript-eslint/eslint-plugin': ^5.15.0
   '@typescript-eslint/parser': ^5.15.0
@@ -17,19 +17,19 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^3.4.1
   graphql: ^16.3.0
-  postcss: ^8.4.6
+  postcss: ^8.4.12
   postcss-import: ^14.0.2
-  prettier: ~2.5.1
+  prettier: ~2.6.0
   prettier-plugin-svelte: ^2.6.0
-  prettier-plugin-tailwindcss: ^0.1.7
-  schema-dts: ^1.0.0
+  prettier-plugin-tailwindcss: ^0.1.8
+  schema-dts: ^1.1.0
   svelte: ^3.46.4
-  svelte-check: ^2.4.5
-  svelte-preprocess: ^4.10.3
+  svelte-check: ^2.4.6
+  svelte-preprocess: ^4.10.4
   svelte-seo: ^1.4.0
   tailwindcss: ^3.0.23
   tslib: ^2.3.1
-  typescript: ^4.5.5
+  typescript: ^4.6.2
 
 dependencies:
   '@fontsource/inter': 4.5.5
@@ -41,7 +41,7 @@ dependencies:
 devDependencies:
   '@sveltejs/adapter-auto': 1.0.0-next.33
   '@sveltejs/kit': 1.0.0-next.301_svelte@3.46.4
-  '@tailwindcss/forms': 0.4.1_tailwindcss@3.0.23
+  '@tailwindcss/forms': 0.5.0_tailwindcss@3.0.23
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.23
   '@typescript-eslint/eslint-plugin': 5.15.0_f2c49ce7d0e93ebcfdb4b7d25b131b28
   '@typescript-eslint/parser': 5.15.0_eslint@8.11.0+typescript@4.6.2
@@ -52,9 +52,9 @@ devDependencies:
   eslint-plugin-svelte3: 3.4.1_eslint@8.11.0+svelte@3.46.4
   postcss: 8.4.12
   postcss-import: 14.0.2_postcss@8.4.12
-  prettier: 2.5.1
-  prettier-plugin-svelte: 2.6.0_prettier@2.5.1+svelte@3.46.4
-  prettier-plugin-tailwindcss: 0.1.8_prettier@2.5.1
+  prettier: 2.6.0
+  prettier-plugin-svelte: 2.6.0_prettier@2.6.0+svelte@3.46.4
+  prettier-plugin-tailwindcss: 0.1.8_prettier@2.6.0
   schema-dts: 1.1.0_typescript@4.6.2
   svelte: 3.46.4
   svelte-check: 2.4.6_postcss@8.4.12+svelte@3.46.4
@@ -244,8 +244,8 @@ packages:
       - supports-color
     dev: true
 
-  /@tailwindcss/forms/0.4.1_tailwindcss@3.0.23:
-    resolution: {integrity: sha512-gS9xjCmJjUBz/eP12QlENPLnf0tCx68oYE3mri0GMP5jdtVwLbGUNSRpjsp6NzLAZzZy3ueOwrcqB78Ax6Z84A==}
+  /@tailwindcss/forms/0.5.0_tailwindcss@3.0.23:
+    resolution: {integrity: sha512-KzWugryEBFkmoaYcBE18rs6gthWCFHHO7cAZm2/hv3hwD67AzwP7udSCa22E7R1+CEJL/FfhYsJWrc0b1aeSzw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
     dependencies:
@@ -1627,27 +1627,27 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte/2.6.0_prettier@2.5.1+svelte@3.46.4:
+  /prettier-plugin-svelte/2.6.0_prettier@2.6.0+svelte@3.46.4:
     resolution: {integrity: sha512-NPSRf6Y5rufRlBleok/pqg4+1FyGsL0zYhkYP6hnueeL1J/uCm3OfOZPsLX4zqD9VAdcXfyEL2PYqGv8ZoOSfA==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
     dependencies:
-      prettier: 2.5.1
+      prettier: 2.6.0
       svelte: 3.46.4
     dev: true
 
-  /prettier-plugin-tailwindcss/0.1.8_prettier@2.5.1:
+  /prettier-plugin-tailwindcss/0.1.8_prettier@2.6.0:
     resolution: {integrity: sha512-hwarSBCswAXa+kqYtaAkFr3Vop9o04WOyZs0qo3NyvW8L7f1rif61wRyq0+ArmVThOuRBcJF5hjGXYk86cwemg==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
       prettier: '>=2.2.0'
     dependencies:
-      prettier: 2.5.1
+      prettier: 2.6.0
     dev: true
 
-  /prettier/2.5.1:
-    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
+  /prettier/2.6.0:
+    resolution: {integrity: sha512-m2FgJibYrBGGgQXNzfd0PuDGShJgRavjUoRCw1mZERIWVSXF0iLzLm+aOqTAbLnC3n6JzUhAA8uZnFVghHJ86A==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
