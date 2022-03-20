@@ -24,6 +24,6 @@
 			"$util/*": ["src/lib/util/*"]
 		}
 	},
-	"exclude": ["node_modules/", ".svelte-kit/", "svelte.config.js"],
-	"include": ["**/*.d.ts", "**/*.js", "**/*.ts", "**/*.svelte", "prettier.cjs"]
+	"exclude": ["node_modules/", ".svelte-kit/", "svelte.config.js", "prettier.cjs"],
+	"include": ["**/*.d.ts", "**/*.js", "**/*.ts", "**/*.svelte"]
 }

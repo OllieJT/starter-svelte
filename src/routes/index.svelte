@@ -1,7 +1,6 @@
 <script context="module" lang="ts">
 	import { client } from "$lib/api/client";
 	import { QueryCountryList } from "$lib/api/QueryCountry";
-
 	import type { Load } from "@sveltejs/kit";
 
 	export const load: Load = async function () {

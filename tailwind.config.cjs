@@ -29,9 +29,19 @@ const config = {
 		require("@tailwindcss/typography"),
 		require("@tailwindcss/forms"),
 		plugin(function ({ addVariant }) {
-			addVariant("enabled", "&:enabled");
+			addVariant("is-enabled", "&.is-enabled");
+			addVariant("group-is-enabled", `:merge(.group).is-enabled &`);
+			addVariant("peer-is-enabled", `:merge(.peer).is-enabled ~ &`);
+
+			addVariant("is-current", "&.is-current");
+			addVariant("group-is-current", `:merge(.group).is-current &`);
+			addVariant("peer-is-current", `:merge(.peer).is-current ~ &`);
+
+			addVariant("is-active", "&.is-active", "");
+			addVariant("group-is-active", `:merge(.group).is-active &`);
+			addVariant("peer-is-active", `:merge(.peer).is-active ~ &`);
+
 			addVariant("hocus", ["&:hover", "&:focus"]);
-			addVariant("interacting", ["&:hover", "&:focus", "&:focus-within", "&.active"]);
 		}),
 	],
 };
