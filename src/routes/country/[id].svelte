@@ -3,7 +3,7 @@
 
 	import type { Load } from "@sveltejs/kit";
 
-	export const load: Load = async function ({ params, fetch }) {
+	export const load: Load = async function ({ params }) {
 		return {
 			props: { countryCode: params.id },
 			status: 200,
