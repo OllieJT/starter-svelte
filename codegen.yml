@@ -1,8 +1,0 @@
-overwrite: true
-schema: "https://countries.trevorblades.com"
-documents: null
-generates:
-    ./src/codegen.ts:
-        plugins:
-            - "typescript"
-            - "typescript-resolvers"

@@ -1,27 +1,9 @@
 <script context="module" lang="ts">
-	import { client } from "$lib/api/client";
-	import { QueryCountryList } from "$lib/api/QueryCountry";
 	import type { Load } from "@sveltejs/kit";
 
 	export const load: Load = async function () {
-		const data = await client.query(QueryCountryList).toPromise();
-
-		if (data.error) {
-			console.log({
-				name: data.error.name,
-				message: data.error.message,
-				stack: data.error.stack,
-				networkError: data.error.networkError,
-				graphQLErrors: data.error.graphQLErrors,
-			});
-			return {
-				status: 400,
-				error: data.error.networkError,
-			};
-		}
-
 		return {
-			props: { demoData: data.data },
+			props: { demoData: [{ hello: "world" }] },
 			status: 200,
 		};
 	};
@@ -43,16 +25,10 @@
 
 		<hr />
 
-		<ul>
-			{#each demoData.countries as country}
-				<li>
-					<a href="/country/{country.code}">{country.name}</a>
-				</li>
-			{/each}
-		</ul>
+		<code>
+			<pre>
+				{JSON.stringify(demoData, null, 2)}
+			</pre>
+		</code>
 	</Prose>
 </Wrapper>
-
-<pre>
-	{JSON.stringify(demoData, null, 2)}
-</pre>

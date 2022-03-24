@@ -4,10 +4,6 @@
 	import "@fontsource/inter/600.css";
 	import "@fontsource/inter/800.css";
 	import "@fontsource/inter/900.css";
-	import { setClient } from "@urql/svelte";
-	import { client } from "$lib/api/client";
-
-setClient(client);
 </script>
 
 <nav>

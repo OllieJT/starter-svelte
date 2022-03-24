@@ -5,7 +5,7 @@
 
 	export const load: Load = async function ({ params }) {
 		return {
-			props: { countryCode: params.id },
+			props: { id: params.id },
 			status: 200,
 		};
 	};
@@ -16,31 +16,17 @@
 	import Wrapper from "$components/container/Wrapper.svelte";
 	import SvelteSeo from "svelte-seo";
 
-	import { operationStore, query } from "@urql/svelte";
-	import { QueryCountryDetail } from "$lib/api/QueryCountry";
-
-	export let countryCode: string | undefined;
-	const countryQuery = operationStore(QueryCountryDetail, { countryCode });
-
-	query(countryQuery);
-
-	console.log($countryQuery);
-
-	$: detail = $countryQuery?.data?.country;
+	export let id: string | undefined;
 </script>
 
 <SvelteSeo title="Homepage" />
 
 <Wrapper constrain gutter>
 	<Prose>
-		<h1>{detail?.name}</h1>
-		<h3>Capital: {detail?.capital}</h3>
+		<h1>Hello from {id}</h1>
 
 		<hr />
 
-		<code><pre>{JSON.stringify(detail, null, 4)}</pre></code>
-
-		<hr />
 		<h1>A multi-line demo <br />for Heading 1</h1>
 		<h2>A multi-line demo <br />for Heading 2</h2>
 		<h3>A multi-line demo <br />for Heading 3</h3>

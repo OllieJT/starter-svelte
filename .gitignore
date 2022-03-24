@@ -16,6 +16,7 @@
 /build
 
 # misc
+src/codegen.ts
 .DS_Store
 *.pem
 *Zone.Identifier
