@@ -6,7 +6,7 @@
 <div
 	class:max-w-4xl={!fullWidth}
 	class:max-w-none={fullWidth}
-	class="prose {size} prose-invert mx-auto prose-headings:font-semibold prose-p:font-sans hover:prose-a:decoration-2"
+	class="prose {size} mx-auto prose-headings:font-semibold prose-p:font-sans hover:prose-a:decoration-2 dark:prose-invert"
 	{...$$props}
 >
 	<slot />
