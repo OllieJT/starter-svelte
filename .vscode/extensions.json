@@ -6,6 +6,7 @@
 		"aaron-bond.better-comments",
 		"gruntfuggly.todo-tree",
 		"mikestead.dotenv",
+		"vivaxy.vscode-conventional-commits",
 
 		"ardenivanov.svelte-intellisense",
 		"svelte.svelte-vscode",
