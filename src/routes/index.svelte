@@ -26,9 +26,7 @@
 		<hr />
 
 		<code>
-			<pre>
-				{JSON.stringify(demoData, null, 2)}
-			</pre>
+			<pre>{JSON.stringify(demoData, null, 2)}</pre>
 		</code>
 	</Prose>
 </Wrapper>
