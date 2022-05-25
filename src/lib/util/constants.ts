@@ -1,3 +1,3 @@
-export const isDevMode = process.env.NODE_ENV === "development";
+import { dev } from "$app/env";
 //TODO: Replace URL
-export const siteUrl = isDevMode ? "http://localhost:3000" : "https://inqling.studio";
+export const siteUrl = dev ? "http://localhost:3000" : "https://inqling.studio";
