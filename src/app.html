@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full overflow-hidden">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,33 +7,18 @@
 		<meta name="robots" content="index,follow" />
 		<meta name="googlebot" content="index,follow" />
 
-		<!-- Twitter -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@TODO" />
-		<meta name="twitter:creator" content="@TODO" />
-		<meta name="twitter:site:id" content="TODO" />
-
-		<!-- OpenGraph -->
-		<meta property="og:type" content="website" />
-		<meta property="og:locale" content="en_GB" />
-		<meta property="og:site_name" content="TODO" />
-
 		<!-- Apple -->
 		<meta name="apple-mobile-web-app-title" content="TODO" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="white" />
 		<meta name="apple-touch-fullscreen" content="yes" />
 
-		<!-- Microsoft -->
-		<meta name="msapplication-config" content="/browserconfig.xml" />
-		<meta name="msapplication-TileColor" content="#TODO" />
-
-		<!-- Universal -->
-		<meta name="theme-color" content="#TODO" />
+		<!-- TODO: Update site theme metadata -->
+		<meta name="theme-color" content="#fb923c" />
 		<meta name="color-scheme" content="dark light" />
-		<link href="/manifest.json" rel="manifest" />
-		<link rel="bookmark" title="TODO" />
+		<link rel="bookmark" title="Hello World" />
 
+		<!-- TODO: Update site owner metadata -->
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
@@ -50,15 +35,15 @@
 		</script>
 
 		<!-- Icons -->
-		<link rel="icon" href="/img/icon/favicon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/img/icon/favicon.svg" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
 
-		%svelte.head%
+		%sveltekit.head%
 	</head>
 	<body
-		class="h-full overflow-auto scroll-smooth bg-white text-mono-600 selection:bg-primary-200 selection:text-primary-800 dark:bg-mono-900 dark:text-mono-400"
+		class="min-h-full scroll-smooth bg-white text-mono-600 accent-primary-500 selection:bg-primary-200 selection:text-primary-800 dark:bg-mono-900 dark:text-mono-400"
 	>
 		<span id="top"></span>
-		<div id="svelte">%svelte.body%</div>
+		<div id="svelte">%sveltekit.body%</div>
 	</body>
 </html>

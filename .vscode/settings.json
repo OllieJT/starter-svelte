@@ -1,33 +1,33 @@
 {
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnType": false,
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true,
+		"source.organizeImports": true
+	},
+	"eslint.packageManager": "yarn",
 	"files.exclude": {
-		"**/*-lock.json": true,
-		"**/*.map": true,
-		"**/.cache": true,
-		"**/.DS_Store": true,
-		"**/.gitattributes": true,
-		"**/*.Identifier": true,
-		"**/node_modules": true,
-		"**/.svelte-kit": true
+		".cache": true,
+		".DS_Store": true,
+		".gitattributes": true,
+		".svelte-kit": true,
+		"*-lock.*": true,
+		"*.Identifier": true,
+		"*.map": true,
+		"node_modules": true,
+		"tsconfig.tsbuildinfo": true,
+		"**/.turbo": true,
+		"**/.vercel": true
 	},
 	"files.associations": {
-		"**/*.env*": "dotenv",
-		"**/*.svx": "mdx"
-		//"*.css": "postcss"
+		"**/*.md": "mdx",
+		"*.css": "postcss"
 	},
 	"files.watcherExclude": {
 		"**/node_modules": true,
 		"**/.svelte-kit": true
 	},
-	"cSpell.words": [
-		"Dribbble",
-		"fortawesome",
-		"frontmatter",
-		"heroicons",
-		"imagetools",
-		"portabletext",
-		"remixicon",
-		"semibold",
-		"tailwindcss",
-		"urql"
-	]
+	"problems.sortOrder": "severity",
+	"todo-tree.tree.scanMode": "workspace only"
 }

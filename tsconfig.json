@@ -1,29 +1,32 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
-		"baseUrl": ".",
-		/* type-checking */
-		"strictNullChecks": true,
-		"strictFunctionTypes": true,
-		"noImplicitAny": true,
-		"noImplicitThis": true,
-		"noEmit": true,
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
 
-		/* clean-code */
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
+		"incremental": false,
+		"noUncheckedIndexedAccess": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"allowSyntheticDefaultImports": true,
+		"jsx": "preserve",
 
 		"paths": {
+			"$src": ["src"],
+			"$src/*": ["src/*"],
 			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"],
-			"$api/*": ["src/lib/api/*"],
-			"$components/*": ["src/lib/components/*"],
-			"$db/*": ["src/lib/db/*"],
-			"$util/*": ["src/lib/util/*"]
+			"$lib/*": ["src/lib/*"]
 		}
-	},
-	"exclude": ["node_modules/", ".svelte-kit/", "svelte.config.js", "prettier.cjs"],
-	"include": ["**/*.d.ts", "**/*.js", "**/*.ts", "**/*.svelte"]
+	}
+	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
+	//
+	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
+	// from the referenced tsconfig.json - TypeScript does not merge them in
 }

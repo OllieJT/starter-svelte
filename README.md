@@ -1,12 +1,28 @@
 # olliejt/starter-svelte
 
+A simple starter to get Svelte setup with:
+
+- Typescript
+- TailwindCSS
+- Linting
+  - ESLint
+  - Prettier
+  - Husky
+  - lint-stages
+
+> to maintain a stable project, the sveltekit version will be pinned to a specific version. You can leave it set, ot update it and handle any migrations needed.
+
 _Project bootstrapped with [`olliejt/starter-svelte`](https://github.com/OllieJT/starter-svelte)._
 
 ## Get started
 
 ```bash
-npx degit github:OllieJT/starter-svelte YOUR_PROJECT_NAME
+npx degit github:OllieJT/starter-svelte new-project
+cd new-project
+git init
 ```
+
+> Keep an eye yout for `todo` comments in the code. These are things you should change to suit your project.
 
 ### npm scripts
 
@@ -18,22 +34,12 @@ npx degit github:OllieJT/starter-svelte YOUR_PROJECT_NAME
 | `format` | Format all files in /src with prettier    |
 | `ts`     | Check for typescript errors               |
 
-### Init steps
-
-1. [ ] Rename `.env.example` to `.env`
-2. [ ] Replace favicon and icons in `./static/...`
-3. [ ] Update manifest details in `./static/manifest.json`
-4. [ ] Search for `TODO` and replace values
-5. [ ] Set design tokens in `./src/styles/tokens/...`
-
 ### Developing
 
-First, run the development server:
+##### Yarn
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+`yarn` to install, then start the dev server with `yarn dev`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##### NPM
+
+`npm install` to install, then start the dev server with `npm run dev`
