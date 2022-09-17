@@ -12,8 +12,6 @@ A simple starter to get Svelte setup with:
 
 > to maintain a stable project, the sveltekit version will be pinned to a specific version. You can leave it set, ot update it and handle any migrations needed.
 
-_Project bootstrapped with [`olliejt/starter-svelte`](https://github.com/OllieJT/starter-svelte)._
-
 ## Get started
 
 ```bash
@@ -43,3 +41,7 @@ git init
 ##### NPM
 
 `npm install` to install, then start the dev server with `npm run dev`
+
+---
+
+_Project bootstrapped with [`olliejt/starter-svelte`](https://github.com/OllieJT/starter-svelte)._
