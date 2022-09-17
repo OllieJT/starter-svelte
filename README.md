@@ -24,13 +24,14 @@ git init
 
 ### npm scripts
 
-| Syntax   | Description                               |
-| -------- | ----------------------------------------- |
-| `dev`    | Development (port 3000).                  |
-| `build`  | Build a production-ready app.             |
-| `start`  | Start a dev server without hot reloading. |
-| `format` | Format all files in /src with prettier    |
-| `ts`     | Check for typescript errors               |
+| Syntax   | Description                                                     |
+| -------- | --------------------------------------------------------------- |
+| `dev`    | starts dev server                                               |
+| `build`  | build app for production                                        |
+| `check`  | checks project for best practices                               |
+| `format` | format files with Prettier                                      |
+| `lint`   | checks for linting and formatting issues with Prettier & Eslint |
+| `ts`     | checks for typescript errors                                    |
 
 ### Developing
 
