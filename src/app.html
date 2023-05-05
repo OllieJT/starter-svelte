@@ -35,15 +35,16 @@
 		</script>
 
 		<!-- Icons -->
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" sizes="180x180" href="%sveltekit.assets%/favicon.svg" />
 
 		%sveltekit.head%
 	</head>
+
 	<body
-		class="min-h-full scroll-smooth bg-white text-mono-600 accent-primary-500 selection:bg-primary-200 selection:text-primary-800 dark:bg-mono-900 dark:text-mono-400"
+		data-sveltekit-preload-data="hover"
+		class="min-h-full scroll-smooth bg-mono-100 text-mono-600"
 	>
-		<span id="top"></span>
-		<div id="svelte">%sveltekit.body%</div>
+		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

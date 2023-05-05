@@ -16,7 +16,7 @@
 	}}
 />
 
-<h1 class="text-lg leading-loose text-black dark:text-white">Nested Page!</h1>
+<h1 class="text-lg leading-loose text-black">Nested Page!</h1>
 <a class="text-primary-500" href="/">{'<--'} Return to homepage</a>
 
 <br />
