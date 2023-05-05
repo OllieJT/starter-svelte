@@ -1,33 +1,47 @@
 {
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.formatOnType": false,
-	"editor.formatOnSave": true,
-	"editor.codeActionsOnSave": {
-		"source.fixAll": true,
-		"source.organizeImports": true
+	"[json]": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
 	},
+	"[svelte]": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true,
+			"source.organizeImports": true
+		}
+	},
+	"[typescript]": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true,
+			"source.organizeImports": true
+		}
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.formatOnType": false,
 	"eslint.packageManager": "yarn",
 	"files.exclude": {
-		".cache": true,
-		".DS_Store": true,
-		".gitattributes": true,
-		".svelte-kit": true,
-		"*-lock.*": true,
-		"*.Identifier": true,
-		"*.map": true,
-		"node_modules": true,
-		"tsconfig.tsbuildinfo": true,
+		"**/_document.tsx": false,
+		"**/.cache": true,
+		"**/.DS_Store": true,
+		"**/.gitattributes": true,
+		"**/.sanity": true,
+		"**/.svelte-kit": true,
+		"**/*-lock.*": true,
+		"**/*.Identifier": true,
+		"**/*.map": true,
 		"**/.turbo": true,
-		"**/.vercel": true
-	},
-	"files.associations": {
-		"**/*.md": "mdx",
-		"*.css": "postcss"
+		"**/.vercel": true,
+		"**/dist": true,
+		"**/node_modules": true,
+		"**/tsconfig.tsbuildinfo": true,
+		"**/.npmrc": true
 	},
 	"files.watcherExclude": {
 		"**/node_modules": true,
 		"**/.svelte-kit": true
 	},
 	"problems.sortOrder": "severity",
-	"todo-tree.tree.scanMode": "workspace only"
+	"tailwindCSS.codeActions": false,
+	"tailwindCSS.validate": false
 }

@@ -2,7 +2,6 @@
 	"name": "~TODO~",
 	"version": "0.0.0",
 	"type": "module",
-	"prettier": "@inqling/prettier-config",
 	"author": {
 		"name": "Ollie Taylor <OllieJT>",
 		"email": "ollie@inqling.studio",
@@ -14,7 +13,6 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"prepare": "npx husky install",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"ts": "tsc --pretty --noImplicitAny --noEmit"
@@ -23,8 +21,9 @@
 		"*.{js,ts,cjs,mjs,svelte}": "eslint --fix",
 		"*.{html,md,mdx,json,css,html}": "prettier  --write"
 	},
-	"devDependencies": {
-		"@inqling/prettier-config": "^1.1.0",
+	"dependencies": {
+		"@fontsource/inter": "^4.5.7",
+		"@inqling/svelte-icons": "^0.2.2",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "1.0.0-next.484",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
@@ -40,7 +39,6 @@
 		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"eslint": "^8.23.1",
-		"husky": "^8.0.1",
 		"lint-staged": "^13.0.3",
 		"postcss-load-config": "^4.0.1",
 		"postcss": "^8.4.16",
@@ -56,9 +54,5 @@
 		"typescript": "^4.8.3",
 		"vite": "^3.1.0",
 		"zod": "^3.19.0"
-	},
-	"dependencies": {
-		"@fontsource/inter": "^4.5.7",
-		"@inqling/svelte-icons": "^0.2.2"
 	}
 }
