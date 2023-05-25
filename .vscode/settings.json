@@ -1,18 +1,21 @@
 {
 	"[json]": {
 		"editor.codeActionsOnSave": {
-			"source.fixAll.eslint": true
+			//"source.fixAll.eslint": true,
+			"source.fixAll.prettier": true
 		}
 	},
 	"[svelte]": {
 		"editor.codeActionsOnSave": {
-			"source.fixAll.eslint": true,
+			//"source.fixAll.eslint": true,
+			"source.fixAll.prettier": true,
 			"source.organizeImports": true
 		}
 	},
 	"[typescript]": {
 		"editor.codeActionsOnSave": {
-			"source.fixAll.eslint": true,
+			//"source.fixAll.eslint": true,
+			"source.fixAll.prettier": true,
 			"source.organizeImports": true
 		}
 	},
@@ -21,11 +24,9 @@
 	"editor.formatOnType": false,
 	"eslint.packageManager": "yarn",
 	"files.exclude": {
-		"**/_document.tsx": false,
 		"**/.cache": true,
 		"**/.DS_Store": true,
 		"**/.gitattributes": true,
-		"**/.sanity": true,
 		"**/.svelte-kit": true,
 		"**/*-lock.*": true,
 		"**/*.Identifier": true,

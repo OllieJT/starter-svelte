@@ -180,10 +180,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@inqling/svelte-icons@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@inqling/svelte-icons/-/svelte-icons-3.3.0.tgz#8b76fa68b6ebfcaad98ea72018ccd51c5f02ea1e"
-  integrity sha512-Ks9tqyWGvxE8tAcwWcc9qn49zr5v7IhzWWS8hP3dUvDCLO2QtM+7GX7QQEhmmS/9KWctcr/KQiZ8PkGjV8ajrA==
+"@inqling/svelte-icons@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@inqling/svelte-icons/-/svelte-icons-3.3.1.tgz#29174c924f7f474b7599c9fd04e8d32cbe2e5a8e"
+  integrity sha512-rAQmWX74BBTWOKo80rIiBBK38aDLPn3NZUXiuDq/HTneU563B6b2+xV2+1/xRPDcHr+L8BTl0ysFSkxaNIFdcg==
 
 "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"

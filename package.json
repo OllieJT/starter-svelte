@@ -16,11 +16,11 @@
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"ts": "tsc --pretty --noImplicitAny --noEmit"
+		"ts": "svelte-kit sync && tsc --pretty --noImplicitAny --noEmit"
 	},
 	"dependencies": {
 		"@fontsource-variable/inter": "^5.0.1",
-		"@inqling/svelte-icons": "^3.3.0",
+		"@inqling/svelte-icons": "^3.3.1",
 		"@sveltejs/adapter-vercel": "^3.0.0",
 		"@sveltejs/kit": "^1.18.0",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
