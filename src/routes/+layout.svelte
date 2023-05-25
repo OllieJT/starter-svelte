@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '@fontsource/inter/400.css';
+	import '@fontsource-variable/inter';
 	import SvelteIcon from '@inqling/svelte-icons/simple-icons/svelte.svelte';
 	import '../app.postcss';
 </script>
