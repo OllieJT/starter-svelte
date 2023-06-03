@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator zod {
+  provider = "zod-prisma"
+  output   = "../src/api/models"
+  // (default) the directory where generated zod schemas will be saved
+
+  relationModel = false
+  // (default) Create and export both plain and related models.
+  // relationModel         = "default" // Do not export model without relations.
+  // relationModel         = false // Do not generate related model
+
+  modelSuffix = "Model"
+  // (default) Suffix to apply to your prisma models when naming Zod schemas
+
+  useDecimalJs = true
+  // useDecimalJs          = false // (default) represent the prisma Decimal type using as a JS number
+  // represent the prisma Decimal type using Decimal.js (as Prisma does)
+
+  // https://www.prisma.io/docs/concepts/components/prisma-client/working-with-fields/working-with-json-fields#filtering-by-null-values
+  prismaJsonNullability = true // (default) uses prisma's scheme for JSON field nullability
+  // prismaJsonNullability = false // allows null assignment to optional JSON fields
+}

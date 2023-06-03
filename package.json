@@ -9,7 +9,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "vitest",
-		"sync": "svelte-kit sync && rm -rf 'src/db/models' && npx prisma generate && prettier --plugin-search-dir . --write 'src/db/models/**/*'",
+		"sync": "svelte-kit sync && rm -rf 'src/api/models' && npx prisma generate && prettier --plugin-search-dir . --write 'src/api/models/**/*'",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
