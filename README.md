@@ -2,13 +2,13 @@
 
 A simple starter to get Svelte setup with:
 
-- Typescript
-- TailwindCSS
-- Linting
-  - ESLint
-  - Prettier
-  - Husky
-  - lint-stages
+-  Typescript
+-  TailwindCSS
+-  Linting
+   -  ESLint
+   -  Prettier
+   -  Husky
+   -  lint-stages
 
 > to maintain a stable project, the sveltekit version will be pinned to a specific version. You can leave it set, ot update it and handle any migrations needed.
 

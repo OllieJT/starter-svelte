@@ -17,6 +17,9 @@ const config = {
 				mono: colors.slate,
 				brand: colors.orange,
 			},
+			screens: {
+				xs: '480px',
+			},
 		},
 	},
 
