@@ -1,18 +1,3 @@
-type USER_ONBOARDED = {
-	is_onboarded: true;
-	id: string;
-	name: string;
-	avatar: string;
-};
-type USER_NEW = {
-	is_onboarded: false;
-	id: string;
-	name: string | null;
-	avatar: string | null;
-};
-
-type SESSION_USER = ONBOARDED_USER | USER_NEW;
-
 export declare module '@auth/core/types' {
 	interface User {
 		is_onboarded: boolean;
@@ -21,7 +6,19 @@ export declare module '@auth/core/types' {
 		avatar: string | null;
 	}
 	interface Session {
-		user: SESSION_USER;
+		user:
+			| {
+					is_onboarded: true;
+					id: string;
+					name: string;
+					avatar: string;
+			  }
+			| {
+					is_onboarded: false;
+					id: string;
+					name: string | null;
+					avatar: string | null;
+			  };
 	}
 }
 
@@ -38,7 +35,19 @@ declare module '@auth/sveltekit/node_modules/@auth/core/types' {
 		avatar: string | null;
 	}
 	interface Session {
-		user: SESSION_USER;
+		user:
+			| {
+					is_onboarded: true;
+					id: string;
+					name: string;
+					avatar: string;
+			  }
+			| {
+					is_onboarded: false;
+					id: string;
+					name: string | null;
+					avatar: string | null;
+			  };
 	}
 }
 
