@@ -7,12 +7,12 @@ import { SvelteKitAuth } from '@auth/sveltekit';
 import type { Handle } from '@sveltejs/kit';
 
 export const handle = SvelteKitAuth({
-	// debug: true,
+	debug: false,
 	callbacks: {
 		session: async ({ session, user }) => {
 			if (session.user) {
 				session.user.id = user.id;
-				session.user.has_onboarded = user.is_onboarded;
+				session.user.is_onboarded = user.is_onboarded;
 				session.user.name = user.name;
 				session.user.avatar = user.avatar;
 			}

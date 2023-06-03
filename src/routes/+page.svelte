@@ -9,5 +9,6 @@
 
 <h1 class="text-lg leading-loose text-black">Hello World</h1>
 <a class="text-primary-500" href="/nested-page">Go to nested page -></a>
+<a class="text-primary-500" href="/form">Go to form demo -></a>
 
 <pre class="my-10 border-t border-mono-500/50 py-10">{JSON.stringify(data, null, 4)}</pre>
