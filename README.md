@@ -1,18 +1,24 @@
-# olliejt/starter-svelte
+## Svelte starter
 
-A simple starter to get Svelte setup with:
+-  [Svelte starter](#svelte-starter)
+-  [Get started](#get-started)
+   -  [npm scripts](#npm-scripts)
+   -  [Useful Docs](#useful-docs)
 
-- Typescript
-- TailwindCSS
-- Linting
-  - ESLint
-  - Prettier
-  - Husky
-  - lint-stages
+An opinionated SvelteKit app starter by [OllieJT](https://github.com/OllieJT). Some core opinions of this starter are:
 
-> to maintain a stable project, the sveltekit version will be pinned to a specific version. You can leave it set, ot update it and handle any migrations needed.
+-  Typescript with Zod
+-  Tailwind CSS
+-  Linting
+   -  ESLint
+   -  Prettier
+   -  lint-stage - formats staged files before commit using Husky
+-  Prisma ORM
+-  Auth.js
 
 ## Get started
+
+Clone this project and remove the git history with [degit](https://github.com/Rich-Harris/degit)
 
 ```bash
 npx degit github:OllieJT/starter-svelte new-project
@@ -33,16 +39,14 @@ git init
 | `lint`   | checks for linting and formatting issues with Prettier & Eslint |
 | `ts`     | checks for typescript errors                                    |
 
-### Developing
+### Useful Docs
 
-##### Yarn
-
-`yarn` to install, then start the dev server with `yarn dev`
-
-##### NPM
-
-`npm install` to install, then start the dev server with `npm run dev`
-
----
-
-_Project bootstrapped with [`olliejt/starter-svelte`](https://github.com/OllieJT/starter-svelte)._
+| Package                                                                | Description                                      |
+| ---------------------------------------------------------------------- | ------------------------------------------------ |
+| [Svelte](https://svelte.dev/docs)                                      | Frontend framework                               |
+| [Svelte Kit](https://kit.svelte.dev/docs)                              | Fullstack meta-framework                         |
+| [sveltekit-superforms](https://superforms.vercel.app/api)              | Easy form data handling with type-safety         |
+| [zod](https://zod.dev/?id=primitives)                                  | Runtime type checking                            |
+| [Prisma](https://www.prisma.io/docs/concepts/components/prisma-schema) | Database ORM with zod generator                  |
+| [Auth.js](https://authjs.dev/reference/sveltekit/client)               | Oauth abstraction configured for use with Prisma |
+| [date-fns](https://date-fns.org/v2.29.3/docs/formatRelative)           | Easy date formatting and utilities               |

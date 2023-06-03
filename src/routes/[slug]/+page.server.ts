@@ -1,0 +1,8 @@
+import { guard_session } from '$src/api/functions/guard-session';
+import type { PageServerLoad } from './$types';
+
+export const load: PageServerLoad = async (event) => {
+	const user = guard_session(event);
+
+	return { params: event.params, searchParams: [...event.url.searchParams], user };
+};

@@ -1,0 +1,46 @@
+name: 'CI'
+on:
+   push:
+      branches:
+         - main
+   pull_request:
+
+# cancel in-progress runs on new commits to same PR (gitub.event.number)
+concurrency:
+   group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
+   cancel-in-progress: true
+
+permissions:
+   contents: read # to fetch code (actions/checkout)
+
+jobs:
+   Linting:
+      name: Linting Checks
+      timeout-minutes: 8
+      runs-on: ubuntu-latest
+      steps:
+         - uses: actions/checkout@v3
+         - name: Set Node to v16.x
+           uses: actions/setup-node@v3
+           with:
+              node-version: 16.x
+
+         - name: Install dependencies
+           uses: borales/actions-yarn@v4
+           with:
+              cmd: install
+
+         - name: Run sync
+           uses: borales/actions-yarn@v4
+           with:
+              cmd: run sync
+
+         - name: Run svelte-check
+           uses: borales/actions-yarn@v4
+           with:
+              cmd: run check
+
+         - name: Run linter
+           uses: borales/actions-yarn@v4
+           with:
+              cmd: run lint
