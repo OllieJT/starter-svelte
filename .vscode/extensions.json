@@ -5,6 +5,7 @@
 		"aaron-bond.better-comments",
 		"bradlc.vscode-tailwindcss",
 		"esbenp.prettier-vscode",
-		"mikestead.dotenv"
+		"mikestead.dotenv",
+		"svelte.svelte-vscode"
 	]
 }

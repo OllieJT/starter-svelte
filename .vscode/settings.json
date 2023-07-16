@@ -1,28 +1,32 @@
 {
 	"[json]": {
 		"editor.codeActionsOnSave": {
-			//"source.fixAll.eslint": true,
 			"source.fixAll.prettier": true
 		}
 	},
 	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode",
 		"editor.codeActionsOnSave": {
-			//"source.fixAll.eslint": true,
 			"source.fixAll.prettier": true,
 			"source.organizeImports": true
 		}
 	},
 	"[typescript]": {
 		"editor.codeActionsOnSave": {
-			//"source.fixAll.eslint": true,
 			"source.fixAll.prettier": true,
 			"source.organizeImports": true
 		}
 	},
+	"[javascript]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		}
+	},
+	"eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+	"typescript.tsdk": "node_modules/typescript/lib",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 	"editor.formatOnType": false,
-	"eslint.packageManager": "yarn",
 	"files.exclude": {
 		"**/.cache": true,
 		"**/.DS_Store": true,
@@ -33,7 +37,6 @@
 		"**/*.map": true,
 		"**/.turbo": true,
 		"**/.vercel": true,
-		"**/dist": true,
 		"**/node_modules": true,
 		"**/tsconfig.tsbuildinfo": true,
 		"**/.npmrc": true
@@ -43,6 +46,5 @@
 		"**/.svelte-kit": true
 	},
 	"problems.sortOrder": "severity",
-	"tailwindCSS.codeActions": false,
-	"tailwindCSS.validate": false
+	"todo-tree.tree.scanMode": "workspace only"
 }
