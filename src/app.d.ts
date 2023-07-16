@@ -1,4 +1,5 @@
 // See https://kit.svelte.dev/docs/types#app
+
 // for information about these interfaces
 declare global {
 	namespace App {
@@ -25,11 +26,6 @@ declare global {
 			email: string;
 		};
 	}
-}
-
-declare module '*?raw' {
-	const value: string;
-	export default value;
 }
 
 export {};

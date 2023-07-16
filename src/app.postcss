@@ -1,3 +1,5 @@
+/* @import 'highlight.js/styles/github.css'; */
+
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
@@ -15,6 +17,10 @@
 @layer components {
 	.debug {
 		@apply border border-red-500 outline-2 outline-yellow-50;
+	}
+
+	.prose pre code {
+		@apply rounded-xl;
 	}
 }
 

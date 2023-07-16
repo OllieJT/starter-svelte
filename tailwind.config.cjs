@@ -20,6 +20,13 @@ const config = {
 			screens: {
 				xs: '480px',
 			},
+			typography: (theme) => ({
+				DEFAULT: {
+					css: {
+						pre: { 'background-color': 'transparent' },
+					},
+				},
+			}),
 		},
 	},
 

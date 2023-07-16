@@ -7,17 +7,9 @@
 
 <Metadata title="Secondary Page" />
 
-<h1 class="text-lg leading-loose text-black">{data.article.metadata.title}</h1>
+<h1 class="text-lg leading-loose text-black">Nested Page!</h1>
 <a class="text-primary-500" href="/">{'<--'} Return to homepage</a>
 
 <br />
 
 <pre class="my-10 border-t border-mono-500/50 py-10">{JSON.stringify(data, null, 4)}</pre>
-
-<br />
-
-<div class="prose prose-xl mx-auto">
-	{@html data.article.content}
-</div>
-
-{data.article.content}
