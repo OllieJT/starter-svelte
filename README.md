@@ -4,6 +4,7 @@
 -  [Get started](#get-started)
    -  [npm scripts](#npm-scripts)
    -  [Useful Docs](#useful-docs)
+-  [Comments](#comments)
 
 An opinionated SvelteKit app starter by [OllieJT](https://github.com/OllieJT). Some core opinions of this starter are:
 
