@@ -31,7 +31,7 @@ export const get_markdown_file = async <T>(
 	const markdown = matter(file);
 	const metadata = validator(markdown.data);
 	const content = marked.parse(markdown.content);
-	const slug = filename.replace(/\.md$/, '');
+	const slug = filename.replace(/\.md$/, '').split('/').pop();
 
 	return { metadata, content, slug };
 };
