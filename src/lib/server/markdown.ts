@@ -9,19 +9,23 @@ import { markedSmartypants } from 'marked-smartypants';
 marked.use({
 	gfm: true,
 });
-
 marked.use(
-	markedSmartypants(),
-	gfmHeadingId(),
-	mangle(),
 	markedHighlight({
 		langPrefix: 'hljs language-',
+		async: true,
 		highlight(code, lang) {
-			const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-			return hljs.highlight(code, { language }).value;
+			return new Promise<string>((resolve) => {
+				const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+				console.log(language, ' :: ', code);
+				const value = hljs.highlight(code, { language }).value;
+				resolve(value);
+			});
 		},
 	}),
 );
+marked.use(markedSmartypants());
+marked.use(gfmHeadingId());
+marked.use(mangle());
 
 export const get_markdown_file = async <T>(
 	filename: string,
@@ -30,7 +34,7 @@ export const get_markdown_file = async <T>(
 ) => {
 	const markdown = matter(file);
 	const metadata = validator(markdown.data);
-	const content = marked.parse(markdown.content);
+	const content = await marked.parse(markdown.content, { async: true });
 	const slug = filename.replace(/\.md$/, '').split('/').pop();
 
 	return { metadata, content, slug };

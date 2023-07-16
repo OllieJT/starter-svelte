@@ -7,9 +7,15 @@ const Metadata = z.object({
 	description: z.string(),
 });
 
-const get_articles = async () => {
-	const files = import.meta.glob('./articles/*.md', { as: 'raw' });
+const get_articles = async (slug?: string) => {
+	const files = import.meta.glob(`./articles/*.md`, { as: 'raw' });
 	const articles = await get_markdown_files(files, Metadata.parse);
+
+	if (slug) {
+		const found = articles.filter((a) => a.slug === slug);
+		console.info(`💠 Found ${found.length} articles matching slug "${slug}"`);
+		return found;
+	}
 
 	// sort articles by metadata.date
 	articles.sort((a, b) => {
@@ -17,24 +23,14 @@ const get_articles = async () => {
 	});
 
 	console.info(`💠 Loaded ${articles.length} articles`);
+	console.info(articles.map((a) => a.slug));
 
 	return articles;
 };
 
-async function use() {
-	let articles = await get_articles();
-
-	return {
-		articles: {
-			all: () => articles,
-			find: (slug: string) => {
-				return articles.find((article) => article.slug === slug);
-			},
-			refresh: async () => {
-				articles = await get_articles();
-			},
-		},
-	};
-}
-
-export const content = await use();
+export const content = {
+	articles: {
+		all: async () => await get_articles(),
+		find_by_slug: async (slug: string) => await get_articles(slug),
+	},
+};
