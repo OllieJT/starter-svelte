@@ -3,7 +3,7 @@
 	import { slide } from 'svelte/transition';
 	import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
 
-	export let data: any;
+	export let data: unknown;
 	export let hide: boolean = false;
 </script>
 
