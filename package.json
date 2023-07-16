@@ -2,8 +2,16 @@
 	"name": "~TODO~",
 	"version": "0.0.0",
 	"type": "module",
-	"author": "hey@olliejt.com",
 	"license": "UNLICENSED",
+	"author": "Ollie Taylor (https://olliejt.com)",
+	"homepage": "https://github.com/OllieJT/starter-svelte/blob/main/README.md",
+	"bugs": {
+		"url": "https://github.com/OllieJT/starter-svelte/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/OllieJT/starter-svelte.git"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
