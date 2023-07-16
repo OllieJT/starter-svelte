@@ -112,7 +112,9 @@ export const PrismaAdapter = (prisma: PrismaClient): Adapter => ({
 	},
 	unlinkAccount: async (provider_providerAccountId) => {
 		console.info(`🔐 :: unlinkAccount(...)`);
-		const res = await prisma.account.delete({ where: { provider_providerAccountId } });
+		const res = await prisma.account.delete({
+			where: { provider_providerAccountId },
+		});
 		const db_account = accountToAdapterAccount(res);
 
 		return db_account;
@@ -138,7 +140,10 @@ export const PrismaAdapter = (prisma: PrismaClient): Adapter => ({
 	},
 	updateSession: async (data) => {
 		console.info(`🔐 :: updateSession(...)`);
-		const res = await prisma.session.update({ where: { sessionToken: data.sessionToken }, data });
+		const res = await prisma.session.update({
+			where: { sessionToken: data.sessionToken },
+			data,
+		});
 
 		return res;
 	},
@@ -158,7 +163,9 @@ export const PrismaAdapter = (prisma: PrismaClient): Adapter => ({
 	useVerificationToken: async (identifier_token) => {
 		console.info(`🔐 :: useVerificationToken(...)`);
 		try {
-			const res = await prisma.verificationToken.delete({ where: { identifier_token } });
+			const res = await prisma.verificationToken.delete({
+				where: { identifier_token },
+			});
 			// @ts-expect-errors // MongoDB needs an ID, but we don't
 			if (res.id) delete verificationToken.id;
 			return res;

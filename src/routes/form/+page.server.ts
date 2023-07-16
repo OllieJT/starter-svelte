@@ -9,7 +9,11 @@ const schema = z.object({
 export const load: PageServerLoad = async (event) => {
 	const form = superValidate(schema);
 
-	return { params: event.params, searchParams: [...event.url.searchParams], form };
+	return {
+		params: event.params,
+		searchParams: [...event.url.searchParams],
+		form,
+	};
 };
 
 export const actions: Actions = {

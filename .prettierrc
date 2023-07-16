@@ -9,12 +9,10 @@
 	"useTabs": true,
 	"tabWidth": 3,
 	"trailingComma": "all",
-	"pluginSearchDirs": ["."],
 	"overrides": [
 		{
 			"files": "*.svelte",
-			"options": { "parser": "svelte" },
-			"svelteSortOrder": "options-scripts-styles-markup"
+			"options": { "parser": "svelte" }
 		}
 	]
 }
