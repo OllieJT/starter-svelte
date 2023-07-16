@@ -14,33 +14,93 @@ permissions:
    contents: read # to fetch code (actions/checkout)
 
 jobs:
-   Linting:
-      name: Linting Checks
-      timeout-minutes: 8
+   setup:
+      name: Setup Enviroment
+      timeout-minutes: 4
       runs-on: ubuntu-latest
+      outputs:
+         cache_name: ${{ steps.cache.outputs.name }}
       steps:
-         - uses: actions/checkout@v3
-         - name: Set Node to v16.x
+         - name: Checkout code
+           uses: actions/checkout@v3
+
+         - name: Set Node to v18.13.0
            uses: actions/setup-node@v3
            with:
-              node-version: 16.x
+              node-version: v18.13.0
+
+         - name: Get Node version
+           id: node
+           run: echo "version=$(node -v)" >> $GITHUB_OUTPUT
+           #run: echo "::set-output name=version::$(node --v)"
+
+         - name: Get Cache Name
+           id: cache
+           run: echo "name=${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}-${{ steps.node.outputs.version }}" >> $GITHUB_OUTPUT
+
+         - name: Get node_modules cache
+           uses: actions/cache@v3
+           id: node_modules
+           with:
+              path: |
+                 **/node_modules
+                 **/.svelte-kit
+
+              key: ${{ steps.cache.outputs.name }}
 
          - name: Install dependencies
-           uses: borales/actions-yarn@v4
-           with:
-              cmd: install
+           run: yarn install  --frozen-lockfile
 
-         - name: Run sync
-           uses: borales/actions-yarn@v4
-           with:
-              cmd: run sync
+         - name: Sync generated typings
+           run: yarn run sync
 
-         - name: Run svelte-check
-           uses: borales/actions-yarn@v4
-           with:
-              cmd: run check
+   linting:
+      name: Linting Checks
+      needs: setup
+      timeout-minutes: 4
+      runs-on: ubuntu-latest
+      steps:
+         - name: Checkout code
+           uses: actions/checkout@v3
 
-         - name: Run linter
-           uses: borales/actions-yarn@v4
+         - name: Get node_modules cache
+           uses: actions/cache/restore@v3
+           id: cache
            with:
-              cmd: run lint
+              path: |
+                 **/node_modules
+                 **/.svelte-kit
+              key: ${{ needs.setup.outputs.cache_name }}
+
+         - name: Install dependencies
+           run: yarn install  --frozen-lockfile
+
+         - name: Lint prettier
+           run: yarn run lint:prettier
+
+         - name: Lint eslint
+           run: yarn run lint:eslint
+
+   svelte_check:
+      name: Typescript Checks
+      needs: setup
+      timeout-minutes: 4
+      runs-on: ubuntu-latest
+      steps:
+         - name: Checkout code
+           uses: actions/checkout@v3
+
+         - name: Get node_modules cache
+           uses: actions/cache/restore@v3
+           id: cache
+           with:
+              path: |
+                 **/node_modules
+                 **/.svelte-kit
+              key: ${{ needs.setup.outputs.cache_name }}
+
+         - name: Install dependencies
+           run: yarn install  --frozen-lockfile
+
+         - name: Check for type errors
+           run: yarn run lint:svelte
