@@ -1,8 +1,8 @@
-import { guard_session } from '$src/api/functions/guard-session';
+import { guard_route } from '$src/lib/server/guard-route';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
-	const user = guard_session(event);
+	const { user } = await guard_route(event);
 
 	return {
 		params: event.params,

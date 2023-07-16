@@ -49,5 +49,21 @@ git init
 | [sveltekit-superforms](https://superforms.vercel.app/api)              | Easy form data handling with type-safety         |
 | [zod](https://zod.dev/?id=primitives)                                  | Runtime type checking                            |
 | [Prisma](https://www.prisma.io/docs/concepts/components/prisma-schema) | Database ORM with zod generator                  |
-| [Auth.js](https://authjs.dev/reference/sveltekit/client)               | Oauth abstraction configured for use with Prisma |
+| [Lucia](https://lucia-auth.com/sveltekit/load-functions?sveltekit)     | Oauth abstraction configured for use with Prisma |
 | [date-fns](https://date-fns.org/v2.29.3/docs/formatRelative)           | Easy date formatting and utilities               |
+
+## Comments
+
+```js
+// KEY: Comment details
+```
+
+| Key   | Description                                                                                                                    |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------ |
+| BUG   | Highlights a known bug in the code that needs fixing.                                                                          |
+| HACK  | Indicates that a certain piece of code is a workaround or a temporary solution that bypasses the issue rather than solving it. |
+| FIXME | A section of code that doesn't work as it should and needs to be fixed.                                                        |
+| TODO  | A reminder that there is some piece of code or functionality that still needs to be implemented or finished.                   |
+| FEAT  | A section where a new feature needs to be implemented.                                                                         |
+| [ ]   | An incomplete checklist item. Typically used for subtasks within a larger project.                                             |
+| [x]   | An complete checklist item.                                                                                                    |
