@@ -45,7 +45,9 @@
 		"allowUnreachableCode": false,
 		// Report an error for unused labels instead of just a warning.
 		"allowUnusedLabels": false
-	}
+	},
+
+	"include": ["./src/app.d.ts"]
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
 	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
