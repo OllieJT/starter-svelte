@@ -6,7 +6,7 @@ date: '2020-01-01'
 
 # The Power of Music
 
-![Image of Music Notes](https://www.example.com/music-notes.jpg 'Music Notes')
+![Image of Music Notes](https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80 'Music Notes')
 
 ## Introduction
 

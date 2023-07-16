@@ -6,7 +6,7 @@ date: '2020-01-01'
 
 # The Wonders of the Universe
 
-![Image of Galaxy](https://www.example.com/galaxy.jpg 'Spiral Galaxy')
+![Image of Galaxy](https://images.unsplash.com/photo-1608178398319-48f814d0750c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1158&q=80 'Spiral Galaxy')
 
 ## Introduction
 
