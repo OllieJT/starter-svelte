@@ -5,7 +5,6 @@ export const load: PageServerLoad = async (event) => {
 	const { user } = await guard_route(event);
 
 	return {
-		params: event.params,
 		searchParams: [...event.url.searchParams],
 		user,
 	};
