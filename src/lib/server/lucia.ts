@@ -1,19 +1,14 @@
 import { dev } from '$app/environment';
-import { env } from '$env/dynamic/private';
-import { prisma } from '$src/lib/server/prisma';
-import licia_adapter from '@lucia-auth/adapter-prisma';
+import {
+	AUTH_GOOGLE_CLIENT_ID,
+	AUTH_GOOGLE_CLIENT_SECRET,
+	AUTH_REDIRECT_URI,
+} from '$env/static/private';
+import { prisma } from '$lib/server/prisma';
+import { prisma as lucia_adapter } from '@lucia-auth/adapter-prisma';
 import { google } from '@lucia-auth/oauth/providers';
-import lucia from 'lucia-auth';
-import { sveltekit } from 'lucia-auth/middleware';
-import { z } from 'zod';
-
-const { AUTH_GOOGLE_CLIENT_ID, AUTH_GOOGLE_CLIENT_SECRET, AUTH_REDIRECT_URI } = z
-	.object({
-		AUTH_GOOGLE_CLIENT_ID: z.string(),
-		AUTH_GOOGLE_CLIENT_SECRET: z.string(),
-		AUTH_REDIRECT_URI: z.string(),
-	})
-	.parse(env);
+import { lucia } from 'lucia';
+import { sveltekit } from 'lucia/middleware';
 
 const use_redirect = (pathname: string) => {
 	const URI = new URL(AUTH_REDIRECT_URI);
@@ -26,12 +21,17 @@ export const auth = lucia({
 	experimental: {
 		debugMode: false,
 	},
-	adapter: licia_adapter(prisma),
+	adapter: lucia_adapter(prisma, {
+		user: 'authUser',
+		key: 'authKey',
+		session: 'authSession',
+	}),
 	env: dev ? 'DEV' : 'PROD',
 	middleware: sveltekit(),
 	// origin: []
-	transformDatabaseUser(database_user) {
+	getUserAttributes(database_user) {
 		return {
+			...database_user,
 			id: database_user.id,
 			email: database_user.email,
 		};

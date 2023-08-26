@@ -1,31 +1,34 @@
-// See https://kit.svelte.dev/docs/types#app
+/// <reference types="lucia" />
 
-// for information about these interfaces
 declare global {
+	// See https://kit.svelte.dev/docs/types#app
 	namespace App {
 		interface Error {
 			message: string;
 			suggestion?: string;
 		}
 		interface Locals {
-			auth: import('lucia-auth').AuthRequest;
+			auth: import('lucia').AuthRequest;
 		}
 		type PageData = {
-			user: import('lucia-auth').User | null;
+			user: import('lucia').User | null;
 		};
 		// interface Platform {}
 	}
-}
 
-/// <reference types="lucia-auth" />
-declare global {
 	namespace Lucia {
 		type Auth = import('$lib/server/lucia').Auth;
-		type UserAttributes = {
-			id: string;
-			email: string;
-		};
+		type DatabaseUserAttributes = Omit<
+			import('@prisma/client').AuthUser,
+			'id' | 'time_created' | 'time_updated'
+		>;
+		// type DatabaseSessionAttributes = {};
 	}
+}
+
+declare module '*?raw' {
+	const value: string;
+	export default value;
 }
 
 export {};

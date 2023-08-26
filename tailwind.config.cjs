@@ -27,6 +27,15 @@ const config = {
 					},
 				},
 			}),
+
+			transitionTimingFunction: {
+				'out-circ': 'cubic-bezier(0, 0.3, 0, 1)',
+			},
+			gridTemplateColumns: {
+				'fill-40': 'repeat(auto-fill, minmax(10rem, 1fr))',
+				'fill-60': 'repeat(auto-fill, minmax(15rem, 1fr))',
+				'fill-80': 'repeat(auto-fill, minmax(20rem, 1fr))',
+			},
 		},
 	},
 
@@ -40,7 +49,10 @@ const config = {
 		require('@tailwindcss/forms'),
 
 		plugin(function ({ addVariant }) {
-			addVariant('hocus', ['&:hover', '&:focus']);
+			addVariant('hocus', ['&:hover', '&:focus', '&:focus-visible']);
+			addVariant('focus', ['&:focus', '&:focus-visible']);
+			addVariant('error', ['&:invalid', '&.invalid']);
+			addVariant('current', ['&.current']);
 		}),
 	],
 };

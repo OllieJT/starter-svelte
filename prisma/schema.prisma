@@ -6,65 +6,48 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
-}
-
-generator zod {
-  provider = "zod-prisma"
-  output   = "../src/lib/validators/prisma"
-  // (default) the directory where generated zod schemas will be saved
-
-  relationModel = false
-  // (default) Create and export both plain and related models.
-  // relationModel         = "default" // Do not export model without relations.
-  // relationModel         = false // Do not generate related model
-
-  modelSuffix = "Model"
-  // (default) Suffix to apply to your prisma models when naming Zod schemas
-
-  useDecimalJs = true
-  // useDecimalJs          = false // (default) represent the prisma Decimal type using as a JS number
-  // represent the prisma Decimal type using Decimal.js (as Prisma does)
-
-  // https://www.prisma.io/docs/concepts/components/prisma-client/working-with-fields/working-with-json-fields#filtering-by-null-values
-  prismaJsonNullability = true // (default) uses prisma's scheme for JSON field nullability
-  // prismaJsonNullability = false // allows null assignment to optional JSON fields
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
 model AuthKey {
-  id              String   @id @unique
-  primary_key     Boolean
+  id              String   @id @default(uuid())
   hashed_password String?
-  expires         BigInt?
   user_id         String
-  auth_user       AuthUser @relation(references: [id], fields: [user_id], onDelete: Cascade)
+  user            AuthUser @relation(references: [id], fields: [user_id], onDelete: Cascade)
 
   @@index([user_id])
   @@map("auth_key")
 }
 
 model AuthSession {
-  id             String   @id @unique
+  id             String   @id @default(uuid())
+  user_id        String
   active_expires BigInt
   idle_expires   BigInt
-  user_id        String
-  auth_user      AuthUser @relation(references: [id], fields: [user_id], onDelete: Cascade)
+  user           AuthUser @relation(references: [id], fields: [user_id], onDelete: Cascade)
 
   @@index([user_id])
   @@map("auth_session")
 }
 
 model AuthUser {
-  id             String        @id @unique
+  id             String        @id @default(uuid())
   time_created   DateTime      @default(now())
   time_updated   DateTime      @updatedAt
   name_first     String
   name_last      String?
+  role           UserRole      @default(User)
   email          String        @unique
   email_verified Boolean       @default(false)
   auth_key       AuthKey[]
   auth_session   AuthSession[]
 
   @@map("auth_user")
+}
+
+enum UserRole {
+  User
+  Admin
 }
