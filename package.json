@@ -13,19 +13,21 @@
 		"url": "https://github.com/OllieJT/starter-svelte.git"
 	},
 	"scripts": {
-		"build": "vite build",
-		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-		"check": "svelte-check --tsconfig ./tsconfig.json --output human-verbose",
+		"build": "npx prisma generate && svelte-kit sync && vite build",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --output human --watch",
+		"check": "svelte-check --tsconfig ./tsconfig.json --output human",
 		"dev": "vite dev",
-		"format": "prettier --plugin-search-dir . --write .",
-		"lint:eslint": "TIMING=1 eslint . --cache",
-		"lint:prettier": "prettier --check .",
-		"lint:svelte": "svelte-check --tsconfig ./tsconfig.json --output machine",
-		"lint": "yarn format && yarn lint:eslint",
+		"format": "prettier --write .",
+		"lint:fix": "eslint . --fix",
+		"lint:format": "prettier --check .",
+		"lint:style": "eslint . --report-unused-disable-directives",
 		"prepare": "husky install",
 		"preview": "vite preview",
-		"sync": "svelte-kit sync",
-		"ts": "tsc --pretty --noImplicitAny --noEmit"
+		"sync": "npx prisma generate && svelte-kit sync && prettier --write ./src/lib/validators/**/*",
+		"test": "vitest",
+		"ts:watch": "svelte-check --tsconfig ./tsconfig.json --output human --threshold error --watch ",
+		"ts": "svelte-check --tsconfig ./tsconfig.json --output human --threshold error",
+		"vercel": "npx vercel env pull .env && npx vercel env pull .env.production  --environment production"
 	},
 	"lint-staged": {
 		"*.{js,ts,cjs,mjs,svelte}": [
