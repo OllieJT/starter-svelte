@@ -2,13 +2,13 @@ import type { UserRole } from '@prisma/client';
 import { error } from '@sveltejs/kit';
 import type { User } from 'lucia';
 
-type Role = 'Admin' | 'User';
-
-const is_restricted = (roles: Role[] | null | undefined): roles is Exclude<Role, null>[] => {
+const is_restricted = (
+	roles: UserRole[] | null | undefined,
+): roles is Exclude<UserRole, null>[] => {
 	return Boolean(roles && roles.length);
 };
 
-const is_unrestricted = (roles: Role[] | null | undefined) => {
+const is_unrestricted = (roles: UserRole[] | null | undefined) => {
 	return roles === null || roles === undefined || roles.length === 0;
 };
 
@@ -25,7 +25,10 @@ export async function guard_route(
 
 // Implementation
 
-export async function guard_route(event: { locals: App.Locals; url: URL }, access?: Role[] | null) {
+export async function guard_route(
+	event: { locals: App.Locals; url: URL },
+	access?: UserRole[] | null,
+) {
 	const auth = await event.locals.auth.validate();
 
 	if (!!access && access.length === 0) {
