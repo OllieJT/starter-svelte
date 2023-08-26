@@ -6,11 +6,10 @@ const schema = z.object({
 	value: z.string().min(3).max(20).default('example value'),
 });
 
-export const load: PageServerLoad = async (event) => {
+export const load: PageServerLoad = async () => {
 	const form = superValidate(schema);
 
 	return {
-		searchParams: [...event.url.searchParams],
 		form,
 	};
 };
