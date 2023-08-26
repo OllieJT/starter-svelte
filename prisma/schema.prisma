@@ -38,10 +38,16 @@ model AuthUser {
   time_updated   DateTime      @updatedAt
   name_first     String
   name_last      String?
+  role           UserRole      @default(User)
   email          String        @unique
   email_verified Boolean       @default(false)
   auth_key       AuthKey[]
   auth_session   AuthSession[]
 
   @@map("auth_user")
+}
+
+enum UserRole {
+  User
+  Admin
 }

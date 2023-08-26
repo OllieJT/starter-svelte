@@ -4,7 +4,7 @@
 
 	export let title: string;
 	export let description: string | undefined = undefined;
-	export let canonical: string = $page.url.href;
+	export let canonical: string = $page?.url?.href;
 	export let profile: OpenGraph['profile'] | undefined = undefined;
 	export let images: OpenGraph['images'] | undefined = undefined;
 
@@ -12,7 +12,7 @@
 
 	$: openGraph = {
 		locale: 'en_GB', // en_US
-		site_name: 'TODO',
+		siteName: 'TODO',
 		type: 'website',
 		url: canonical,
 		title: title,
@@ -23,7 +23,7 @@
 </script>
 
 <MetaTags
-	titleTemplate="%s | {openGraph.site_name}"
+	titleTemplate="%s | {openGraph.siteName}"
 	title={openGraph.title}
 	description={openGraph.description}
 	{canonical}
