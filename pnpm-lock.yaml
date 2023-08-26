@@ -41,9 +41,6 @@ devDependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.3.3)
-  '@types/marked':
-    specifier: ^5.0.1
-    version: 5.0.1
   '@types/node':
     specifier: ^20.5.6
     version: 20.5.6
@@ -83,21 +80,6 @@ devDependencies:
   lucia-auth:
     specifier: ^1.8.0
     version: 1.8.0
-  marked:
-    specifier: ^5.1.1
-    version: 5.1.1
-  marked-gfm-heading-id:
-    specifier: ^3.0.6
-    version: 3.0.6(marked@5.1.1)
-  marked-highlight:
-    specifier: ^2.0.4
-    version: 2.0.4(marked@5.1.1)
-  marked-mangle:
-    specifier: ^1.1.2
-    version: 1.1.2(marked@5.1.1)
-  marked-smartypants:
-    specifier: ^1.1.0
-    version: 1.1.0(marked@5.1.1)
   postcss:
     specifier: ^8.4.28
     version: 8.4.28
@@ -770,10 +752,6 @@ packages:
 
   /@types/json-schema@7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
-    dev: true
-
-  /@types/marked@5.0.1:
-    resolution: {integrity: sha512-Y3pAUzHKh605fN6fvASsz5FDSWbZcs/65Q6xYRmnIP9ZIYz27T4IOmXfH9gWJV1dpi7f1e7z7nBGUTx/a0ptpA==}
     dev: true
 
   /@types/ms@0.7.31:
@@ -1794,10 +1772,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /github-slugger@2.0.0:
-    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
-    dev: true
-
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -2197,46 +2171,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       semver: 6.3.1
-    dev: true
-
-  /marked-gfm-heading-id@3.0.6(marked@5.1.1):
-    resolution: {integrity: sha512-ot/iTTxvSJpUWv+DJ5aGVj2kxdEpsiKj6NJy6icwcdrVPHsbAE3dZ3Usk4ORt8ke2HKbw83n5Q5jNwSMuAYMSA==}
-    peerDependencies:
-      marked: ^4 || ^5 || ^6 || ^7
-    dependencies:
-      github-slugger: 2.0.0
-      marked: 5.1.1
-    dev: true
-
-  /marked-highlight@2.0.4(marked@5.1.1):
-    resolution: {integrity: sha512-hnm+rY3p+DQlSd2uY3zSXec+1kq5x9lD3+PWOMz0ROcil4Btcbt///Fto52jqWWt7XBGiTRk+1+w2rGfx2U2Sw==}
-    peerDependencies:
-      marked: ^4 || ^5 || ^6 || ^7
-    dependencies:
-      marked: 5.1.1
-    dev: true
-
-  /marked-mangle@1.1.2(marked@5.1.1):
-    resolution: {integrity: sha512-+TDSCT4YiXYlSoinMLEzOY6ErY9S1ZuLMjP5OcC6ZWpre93OxCxspFwa5qZ4RIu7X7TH7fnV0CYxEmgvBz4aFg==}
-    peerDependencies:
-      marked: ^4 || ^5 || ^6 || ^7
-    dependencies:
-      marked: 5.1.1
-    dev: true
-
-  /marked-smartypants@1.1.0(marked@5.1.1):
-    resolution: {integrity: sha512-7pu/8Zpr8rWIXmtab8XPleNuaD+xZ5DQRfjGp3pqAo+SmmDBZ66+fAn5CSQPysAwBzd/qrpOmLg7KSRlwyPHKA==}
-    peerDependencies:
-      marked: ^4 || ^5 || ^6 || ^7
-    dependencies:
-      marked: 5.1.1
-      smartypants: 0.2.2
-    dev: true
-
-  /marked@5.1.1:
-    resolution: {integrity: sha512-bTmmGdEINWmOMDjnPWDxGPQ4qkDLeYorpYbEtFOXzOruTwUE671q4Guiuchn4N8h/v6NGd7916kXsm3Iz4iUSg==}
-    engines: {node: '>= 18'}
-    hasBin: true
     dev: true
 
   /mdn-data@2.0.30:
@@ -2993,11 +2927,6 @@ packages:
     dependencies:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 4.0.0
-    dev: true
-
-  /smartypants@0.2.2:
-    resolution: {integrity: sha512-TzobUYoEft/xBtb2voRPryAUIvYguG0V7Tt3de79I1WfXgCwelqVsGuZSnu3GFGRZhXR90AeEYIM+icuB/S06Q==}
-    hasBin: true
     dev: true
 
   /sorcery@0.11.0:

@@ -47,7 +47,6 @@
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/forms": "^0.5.4",
 		"@tailwindcss/typography": "^0.5.9",
-		"@types/marked": "^5.0.1",
 		"@types/node": "^20.5.6",
 		"@typescript-eslint/eslint-plugin": "^6.4.1",
 		"@typescript-eslint/parser": "^6.4.1",
@@ -61,11 +60,6 @@
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.3",
 		"lucia-auth": "^1.8.0",
-		"marked": "^5.1.1",
-		"marked-gfm-heading-id": "^3.0.6",
-		"marked-highlight": "^2.0.4",
-		"marked-mangle": "^1.1.2",
-		"marked-smartypants": "^1.1.0",
 		"postcss": "^8.4.28",
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.8.8",
@@ -83,7 +77,6 @@
 		"typescript": "^5.2.2",
 		"vite": "^4.4.9",
 		"vitest": "^0.33.0",
-		"zod": "^3.22.2",
-		"zod-prisma": "^0.5.4"
+		"zod": "^3.22.2"
 	}
 }
