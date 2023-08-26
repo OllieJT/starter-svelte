@@ -2,20 +2,20 @@ import type { UserRole } from '@prisma/client';
 import { error } from '@sveltejs/kit';
 import type { User } from 'lucia';
 
-type AllowedRoles = UserRole[] | null;
+type Role = 'Admin' | 'User';
 
-const is_restricted = (roles: AllowedRoles): roles is UserRole[] => {
+const is_restricted = (roles: Role[] | null | undefined): roles is Exclude<Role, null>[] => {
 	return Boolean(roles && roles.length);
 };
 
-const is_unrestricted = (roles: AllowedRoles): roles is null => {
-	return roles === null;
+const is_unrestricted = (roles: Role[] | null | undefined) => {
+	return roles === null || roles === undefined || roles.length === 0;
 };
 
 // Overload signatures
 export async function guard_route(
 	event: { locals: App.Locals; url: URL },
-	access: null,
+	access?: null,
 ): Promise<{ user: User; sessionId: string } | { user: null; sessionId: null }>;
 
 export async function guard_route(
@@ -25,11 +25,12 @@ export async function guard_route(
 
 // Implementation
 
-export async function guard_route(
-	event: { locals: App.Locals; url: URL },
-	access: AllowedRoles = null,
-) {
+export async function guard_route(event: { locals: App.Locals; url: URL }, access?: Role[] | null) {
 	const auth = await event.locals.auth.validate();
+
+	if (!!access && access.length === 0) {
+		throw error(500, 'Invalid access role declaration');
+	}
 
 	if (is_restricted(access)) {
 		if (auth && access.includes(auth.user.role)) {
