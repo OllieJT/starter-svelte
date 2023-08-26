@@ -20,9 +20,6 @@ devDependencies:
   '@lucia-auth/oauth':
     specifier: ^3.0.0
     version: 3.0.0(lucia@2.4.0)
-  '@lucia-auth/tokens':
-    specifier: ^1.0.2
-    version: 1.0.2(lucia-auth@1.8.0)
   '@prisma/client':
     specifier: ^5.2.0
     version: 5.2.0(prisma@5.2.0)
@@ -77,9 +74,9 @@ devDependencies:
   lint-staged:
     specifier: ^14.0.1
     version: 14.0.1
-  lucia-auth:
-    specifier: ^1.8.0
-    version: 1.8.0
+  lucia:
+    specifier: ^2.4.0
+    version: 2.4.0
   postcss:
     specifier: ^8.4.28
     version: 8.4.28
@@ -497,15 +494,6 @@ packages:
       lucia: ^2.0.0
     dependencies:
       lucia: 2.4.0
-    dev: true
-
-  /@lucia-auth/tokens@1.0.2(lucia-auth@1.8.0):
-    resolution: {integrity: sha512-gdhzw7CK+6V39+u/iGYauLblNoA+fhQzOUEkGJCrzA8Nth2VxOJQixTJxV6YATcy2PPYihJgIeU8GFhpkhYXig==}
-    deprecated: No longer supported
-    peerDependencies:
-      lucia-auth: 1.x
-    dependencies:
-      lucia-auth: 1.8.0
     dev: true
 
   /@mapbox/node-pre-gyp@1.0.11:
@@ -2066,10 +2054,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
-    dev: true
-
-  /lucia-auth@1.8.0:
-    resolution: {integrity: sha512-zI8gT2AOpxTPIxYzToEdgoht+GOflrduZiHPsOEmg4/2pThOyCW3o3lXh+Uwh20tJ9QoXwQe9/Omn6PlUG6efw==}
     dev: true
 
   /lucia@2.4.0:
