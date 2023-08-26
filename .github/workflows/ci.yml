@@ -2,7 +2,7 @@ name: 'CI'
 on:
    push:
       branches:
-         - main
+         - __disabled
    pull_request:
 
 # cancel in-progress runs on new commits to same PR (gitub.event.number)
@@ -11,18 +11,41 @@ concurrency:
    cancel-in-progress: true
 
 permissions:
-   contents: read # to fetch code (actions/checkout)
+   contents: read
+
+env:
+   AUTH_GOOGLE_CLIENT_ID: 'xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com'
+   AUTH_GOOGLE_CLIENT_SECRET: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+   AUTH_REDIRECT_URI: 'https://knomii.coach'
+   DATABASE_URL: 'mysql://user:password@host:3306/knomii'
 
 jobs:
-   setup:
-      name: Setup Enviroment
+   lint:
+      name: Lint Codebase
       timeout-minutes: 4
       runs-on: ubuntu-latest
-      outputs:
-         cache_name: ${{ steps.cache.outputs.name }}
       steps:
          - name: Checkout code
            uses: actions/checkout@v3
+
+         - name: Create and populate .env file
+           run: |
+              touch .env
+
+              echo AUTH_GOOGLE_CLIENT_ID="$AUTH_GOOGLE_CLIENT_ID" >> .env
+              echo AUTH_GOOGLE_CLIENT_SECRET="$AUTH_GOOGLE_CLIENT_SECRET" >> .env
+              echo AUTH_REDIRECT_URI="$AUTH_REDIRECT_URI" >> .env
+              echo DATABASE_URL="$DATABASE_URL" >> .env
+
+              echo "cat .env"
+              cat .env
+
+              echo "ls -a ."
+              ls -a .
+
+              echo "ls -a ${{ github.workspace }}"
+              ls -a ${{ github.workspace }}
+           shell: bash
 
          - name: Set Node to v18.13.0
            uses: actions/setup-node@v3
@@ -34,73 +57,40 @@ jobs:
            run: echo "version=$(node -v)" >> $GITHUB_OUTPUT
            #run: echo "::set-output name=version::$(node --v)"
 
-         - name: Get Cache Name
-           id: cache
-           run: echo "name=${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}-${{ steps.node.outputs.version }}" >> $GITHUB_OUTPUT
-
-         - name: Get node_modules cache
-           uses: actions/cache@v3
-           id: node_modules
+         - uses: pnpm/action-setup@v2
+           name: Install pnpm
            with:
-              path: |
-                 **/node_modules
-                 **/.svelte-kit
+              version: 8.6.9
+              run_install: false
 
-              key: ${{ steps.cache.outputs.name }}
+         - name: Get pnpm store directory
+           shell: bash
+           run: |
+              echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+         - uses: actions/cache@v3
+           name: Setup pnpm cache
+           with:
+              path: ${{ env.STORE_PATH }}
+              key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+              restore-keys: |
+                 ${{ runner.os }}-pnpm-store-
+
+         - name: Source .env file
+           run: source .env
+           shell: bash
 
          - name: Install dependencies
-           run: yarn install  --frozen-lockfile
+           run: pnpm install
 
          - name: Sync generated typings
-           run: yarn run sync
+           run: pnpm run sync
 
-   linting:
-      name: Linting Checks
-      needs: setup
-      timeout-minutes: 4
-      runs-on: ubuntu-latest
-      steps:
-         - name: Checkout code
-           uses: actions/checkout@v3
+         - name: Lint Prettier
+           run: pnpm run lint:format
 
-         - name: Get node_modules cache
-           uses: actions/cache/restore@v3
-           id: cache
-           with:
-              path: |
-                 **/node_modules
-                 **/.svelte-kit
-              key: ${{ needs.setup.outputs.cache_name }}
-
-         - name: Install dependencies
-           run: yarn install  --frozen-lockfile
-
-         - name: Lint prettier
-           run: yarn run lint:prettier
-
-         - name: Lint eslint
-           run: yarn run lint:eslint
-
-   svelte_check:
-      name: Typescript Checks
-      needs: setup
-      timeout-minutes: 4
-      runs-on: ubuntu-latest
-      steps:
-         - name: Checkout code
-           uses: actions/checkout@v3
-
-         - name: Get node_modules cache
-           uses: actions/cache/restore@v3
-           id: cache
-           with:
-              path: |
-                 **/node_modules
-                 **/.svelte-kit
-              key: ${{ needs.setup.outputs.cache_name }}
-
-         - name: Install dependencies
-           run: yarn install  --frozen-lockfile
+         - name: Lint Eslint
+           run: pnpm run lint:style
 
          - name: Check for type errors
-           run: yarn run lint:svelte
+           run: pnpm run ts

@@ -37,14 +37,20 @@
 		"**/*.map": true,
 		"**/.turbo": true,
 		"**/.vercel": true,
+		"**/dist": true,
 		"**/node_modules": true,
 		"**/tsconfig.tsbuildinfo": true,
-		"**/.npmrc": true
+		"**/.npmrc": true,
+		".eslintcache": true
 	},
 	"files.watcherExclude": {
 		"**/node_modules": true,
 		"**/.svelte-kit": true
 	},
 	"problems.sortOrder": "severity",
-	"todo-tree.tree.scanMode": "workspace only"
+	"todo-tree.tree.scanMode": "workspace only",
+	"material-icon-theme.folders.associations": {
+		"parts": "components",
+		"seed": "api"
+	}
 }
