@@ -1,55 +1,39 @@
 import type { UserRole } from '@prisma/client';
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import type { User } from 'lucia';
 
-const is_restricted = (
-	roles: UserRole[] | null | undefined,
-): roles is Exclude<UserRole, null>[] => {
-	return Boolean(roles && roles.length);
-};
+const access_level = {
+	NONE: null,
+	USER: ['User', 'Admin'],
+	ADMIN: ['Admin'],
+} satisfies Record<string, UserRole[] | null>;
 
-const is_unrestricted = (roles: UserRole[] | null | undefined) => {
-	return roles === null || roles === undefined || roles.length === 0;
-};
+export type AccessLevel = keyof typeof access_level;
 
-// Overload signatures
-export async function guard_route(
-	event: { locals: App.Locals; url: URL },
-	access?: null,
-): Promise<{ user: User; sessionId: string } | { user: null; sessionId: null }>;
+export async function guard_route(auth: App.Locals['auth'], access: AccessLevel = 'NONE') {
+	const roles = access_level[access];
 
-export async function guard_route(
-	event: { locals: App.Locals; url: URL },
-	access: UserRole[],
-): Promise<{ user: User; sessionId: string }>;
+	const session = await auth.validate();
 
-// Implementation
+	if (!session?.user) throw redirect(302, '/login');
 
-export async function guard_route(
-	event: { locals: App.Locals; url: URL },
-	access?: UserRole[] | null,
-) {
-	const auth = await event.locals.auth.validate();
-
-	if (!!access && access.length === 0) {
-		throw error(500, 'Invalid access role declaration');
+	if (roles?.length) {
+		// @ts-expect-error - typescript is dumb sometimes
+		const has_role = roles.includes(session.user.role);
+		if (!has_role) throw error(403, 'Forbidden');
 	}
 
-	if (is_restricted(access)) {
-		if (auth && access.includes(auth.user.role)) {
-			return { user: auth.user, sessionId: auth.sessionId };
-		} else {
-			throw error(403, 'Forbidden');
-		}
-	}
+	return session;
+}
 
-	if (is_unrestricted(access)) {
-		if (auth) {
-			return { user: auth.user, sessionId: auth.sessionId };
-		} else {
-			return { user: null, sessionId: null };
-		}
-	}
+export function guard_game_series(user: User, developer: { user_id: string | null }) {
+	if (user.role === 'Admin') return true;
+	else if (developer.user_id === user.id) return true;
+	else throw error(403, 'You are not authorized to manage this developer');
+}
 
-	throw error(401, 'Unauthorized');
+export function guard_developer(user: User, developer: { user_id: string | null }) {
+	if (user.role === 'Admin') return true;
+	else if (developer.user_id === user.id) return true;
+	else throw error(403, 'You are not authorized to manage this developer');
 }

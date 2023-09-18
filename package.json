@@ -18,16 +18,16 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json --output human",
 		"dev": "vite dev",
 		"format": "prettier --write .",
-		"lint:fix": "eslint . --fix",
-		"lint:format": "prettier --check .",
-		"lint:style": "eslint . --report-unused-disable-directives",
+		"lint": "eslint . --fix --report-unused-disable-directives && prettier --check .",
 		"prepare": "husky install",
 		"preview": "vite preview",
-		"sync": "npx prisma generate && svelte-kit sync && prettier --write ./src/lib/validators/**/*",
+		"db:sync": "npx prisma generate && svelte-kit sync",
+		"db:push": "npx prisma db push && svelte-kit sync",
 		"test": "vitest",
 		"ts:watch": "svelte-check --tsconfig ./tsconfig.json --output human --threshold error --watch ",
 		"ts": "svelte-check --tsconfig ./tsconfig.json --output human --threshold error",
-		"vercel": "npx vercel env pull .env && npx vercel env pull .env.production  --environment production"
+		"vercel": "npx vercel env pull .env && npx vercel env pull .env.production  --environment production",
+		"molly": "npx lilmolly"
 	},
 	"lint-staged": {
 		"*.{js,ts,cjs,mjs,svelte}": [
