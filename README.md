@@ -1,33 +1,30 @@
-## Svelte starter
+# About the project
 
--  [Svelte starter](#svelte-starter)
--  [Get started](#get-started)
-   -  [npm scripts](#npm-scripts)
-   -  [Useful Docs](#useful-docs)
--  [Comments](#comments)
-
-An opinionated SvelteKit app starter by [OllieJT](https://github.com/OllieJT). Some core opinions of this starter are:
-
--  Typescript with Zod
--  Tailwind CSS
--  Linting
-   -  ESLint
-   -  Prettier
-   -  lint-stage - formats staged files before commit using Husky
--  Prisma ORM
--  Auth.js
-
-## Get started
-
-Clone this project and remove the git history with [degit](https://github.com/Rich-Harris/degit)
+This is a [SvelteKit](https://kit.svelte.dev) project. You'll need node setup before you begin.
 
 ```bash
-npx degit github:OllieJT/starter-svelte new-project
-cd new-project
-git init
+# install dependencies
+npm install
 ```
 
-> Keep an eye yout for `todo` comments in the code. These are things you should change to suit your project.
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
 
 ### npm scripts
 
@@ -40,17 +37,15 @@ git init
 | `lint`   | checks for linting and formatting issues with Prettier & Eslint |
 | `ts`     | checks for typescript errors                                    |
 
-### Useful Docs
+## Useful Docs
 
-| Package                                                                | Description                                      |
-| ---------------------------------------------------------------------- | ------------------------------------------------ |
-| [Svelte](https://svelte.dev/docs)                                      | Frontend framework                               |
-| [Svelte Kit](https://kit.svelte.dev/docs)                              | Fullstack meta-framework                         |
-| [sveltekit-superforms](https://superforms.vercel.app/api)              | Easy form data handling with type-safety         |
-| [zod](https://zod.dev/?id=primitives)                                  | Runtime type checking                            |
-| [Prisma](https://www.prisma.io/docs/concepts/components/prisma-schema) | Database ORM with zod generator                  |
-| [Lucia](https://lucia-auth.com/sveltekit/load-functions?sveltekit)     | Oauth abstraction configured for use with Prisma |
-| [date-fns](https://date-fns.org/v2.29.3/docs/formatRelative)           | Easy date formatting and utilities               |
+| Package                                                      | Description                              |
+| ------------------------------------------------------------ | ---------------------------------------- |
+| [Svelte](https://svelte.dev/docs)                            | Frontend framework                       |
+| [Svelte Kit](https://kit.svelte.dev/docs)                    | Fullstack meta-framework                 |
+| [sveltekit-superforms](https://superforms.vercel.app/api)    | Easy form data handling with type-safety |
+| [zod](https://zod.dev/?id=primitives)                        | Runtime type checking                    |
+| [date-fns](https://date-fns.org/v2.29.3/docs/formatRelative) | Easy date formatting and utilities       |
 
 ## Comments
 

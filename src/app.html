@@ -1,50 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smoothh">
 	<head>
 		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-		<meta name="robots" content="index,follow" />
-		<meta name="googlebot" content="index,follow" />
-
-		<!-- Apple -->
-		<meta name="apple-mobile-web-app-title" content="TODO" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="white" />
-		<meta name="apple-touch-fullscreen" content="yes" />
-
-		<!-- TODO: Update site theme metadata -->
-		<meta name="theme-color" content="#fb923c" />
-		<meta name="color-scheme" content="dark light" />
-		<link rel="bookmark" title="Hello World" />
-
-		<!-- TODO: Update site owner metadata -->
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Organization",
-				"name": "<TODO>",
-				"url": "<TODO>",
-				"logo": "<TODO>"
-				"sameAs": [
-					"https://www.linkedin.com/company/<TODO>",
-					"https://dribbble.com/<TODO>",
-					"https://twitter.com/<TODO>"
-				]
-			}
-		</script>
-
-		<!-- Icons -->
-		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" sizes="180x180" href="%sveltekit.assets%/favicon.svg" />
-
 		%sveltekit.head%
 	</head>
-
-	<body
-		data-sveltekit-preload-data="hover"
-		class="min-h-full scroll-smooth bg-mono-100 text-mono-600"
-	>
+	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

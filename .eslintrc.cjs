@@ -1,47 +1,31 @@
+/** @type { import("eslint").Linter.FlatConfig } */
 module.exports = {
 	root: true,
-	parser: '@typescript-eslint/parser',
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
-		'prettier',
-		'plugin:svelte/prettier',
+		'plugin:svelte/recommended',
+		'prettier'
 	],
-	plugins: ['@typescript-eslint', 'unused-imports'],
-	ignorePatterns: ['*.cjs'],
-	overrides: [
-		{
-			files: ['*.svelte'],
-			parser: 'svelte-eslint-parser',
-			// Parse the `<script>` in `.svelte` as TypeScript by adding the following configuration.
-			parserOptions: {
-				parser: '@typescript-eslint/parser',
-			},
-		},
-		{
-			files: ['validators/prisma/*.ts'],
-			rules: {
-				'@typescript-eslint/no-unused-vars': 'off',
-			},
-		},
-	],
-	globals: {
-		$$Generic: 'readonly',
-		$$Props: 'readonly',
-	},
-	settings: {
-		'svelte3/typescript': () => require('typescript'),
-	},
+	parser: '@typescript-eslint/parser',
+	plugins: ['@typescript-eslint'],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020,
+		extraFileExtensions: ['.svelte']
 	},
 	env: {
 		browser: true,
 		es2017: true,
-		node: true,
+		node: true
 	},
-	rules: {
-		'@typescript-eslint/no-inferrable-types': 'off',
-	},
+	overrides: [
+		{
+			files: ['*.svelte'],
+			parser: 'svelte-eslint-parser',
+			parserOptions: {
+				parser: '@typescript-eslint/parser'
+			}
+		}
+	]
 };

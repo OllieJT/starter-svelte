@@ -1,30 +1,29 @@
 {
 	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.codeActionsOnSave": {
-			"source.fixAll.prettier": true
-		}
-	},
-	"[svelte]": {
-		"editor.defaultFormatter": "svelte.svelte-vscode",
-		"editor.codeActionsOnSave": {
-			"source.fixAll.prettier": true,
-			"source.organizeImports": true
+			"source.fixAll.prettier": "explicit"
 		}
 	},
 	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.codeActionsOnSave": {
-			"source.fixAll.prettier": true,
-			"source.organizeImports": true
+			"source.fixAll.prettier": "explicit",
+			"source.organizeImports": "explicit"
 		}
 	},
 	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.codeActionsOnSave": {
-			"source.organizeImports": true
+			"source.organizeImports": "explicit"
 		}
 	},
-	"eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+
+	"files.associations": {
+		".css": "postcss"
+	},
+	// "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 	"editor.formatOnType": false,
 	"explorer.compactFolders": false,
@@ -32,16 +31,12 @@
 		"**/.cache": true,
 		"**/.DS_Store": true,
 		"**/.gitattributes": true,
-		"**/.svelte-kit": true,
 		"**/*-lock.*": true,
 		"**/*.Identifier": true,
 		"**/*.map": true,
 		"**/.turbo": true,
-		"**/.vercel": true,
-		"**/dist": true,
 		"**/node_modules": true,
 		"**/tsconfig.tsbuildinfo": true,
-		"**/.npmrc": true,
 		".eslintcache": true
 	},
 	"files.watcherExclude": {
@@ -51,11 +46,33 @@
 	"problems.sortOrder": "severity",
 	"todo-tree.tree.scanMode": "workspace only",
 	"material-icon-theme.folders.associations": {
+		// Reference: https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/folderIcons.png
 		"parts": "components",
+		"blocks": "components",
 		"seed": "api",
 		"intl": "i18n",
 		"store": "hook",
 		"login": "secure",
-		"oauth": "api"
-	}
+		"oauth": "api",
+		"studio": "app",
+
+		"format": "api",
+
+		"atom": "animation",
+		"molecule": "cluster",
+		"organism": "fastlane"
+	},
+
+	"cssvar.files": [
+		"./node_modules/open-props/open-props.min.css",
+		// if you have an alternative path to where your styles are located
+		// you can add it in this array of files
+		"./src/app.css"
+	],
+
+	// Do not ignore node_modules css files, which is ignored by default
+	"cssvar.ignore": [],
+
+	// add support for autocomplete in JS or JS like files
+	"cssvar.extensions": ["css", "postcss", "svelte"]
 }

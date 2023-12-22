@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	/**
+  * @license
+  *
+  * Font Family: Satoshi
+  * Designed by: Deni Anggara
+  * URL: https://www.fontshare.com/fonts/satoshi
+  * © 2023 Indian Type Foundry
+  *
+  */
+
+	/**
+  * available axes:
+  * 'wght' (range from 300.0 to 900.0)
+  */
+
+	@font-face {
+		font-family: 'Satoshi-Variable';
+		src:
+			url('/fonts/Satoshi-Variable.woff2') format('woff2'),
+			url('/fonts/Satoshi-Variable.woff') format('woff'),
+			url('/fonts/Satoshi-Variable.ttf') format('truetype');
+		font-weight: 300 900;
+		font-display: swap;
+		font-style: normal;
+	}
+
+	/**
+  * available axes:
+  * 'wght' (range from 300.0 to 900.0)
+
+  */
+
+	/* @font-face {
+    font-family: 'Satoshi-VariableItalic';
+    src: url('/fonts/Satoshi-VariableItalic.woff2') format('woff2'),
+        url('/fonts/Satoshi-VariableItalic.woff') format('woff'),
+        url('/fonts/Satoshi-VariableItalic.ttf') format('truetype');
+        font-weight: 300 900;
+        font-display: swap;
+        font-style: italic;
+  } */
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-wrap: balance;
+	}
+}
+
+@layer utilities {
+	.wrap-balance {
+		text-wrap: balance;
+	}
+}
