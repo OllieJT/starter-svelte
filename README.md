@@ -1,5 +1,9 @@
 # About the project
 
+```
+npx degit OllieJT/starter-svelte
+```
+
 This is a [SvelteKit](https://kit.svelte.dev) project. You'll need node setup before you begin.
 
 ```bash
